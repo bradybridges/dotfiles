@@ -7,6 +7,7 @@ endif
 """ Vim-Plug
 call plug#begin()
 
+
 " Aethetics
 Plug 'ryanoasis/vim-devicons'
 Plug 'prettier/vim-prettier', {
@@ -18,7 +19,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Aesthetics - Themes
 Plug 'ayu-theme/ayu-vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'dev' }
-Plug 'NLKNguyen/papercolor-theme'
 
 " Functionalities
 Plug 'preservim/nerdtree'
@@ -41,9 +41,9 @@ call plug#end()
 
 """ Ayu theme
 set termguicolors
-"let ayucolor="dark"
-set background=dark
-colorscheme PaperColor
+let ayucolor="dark"
+colorscheme ayu
+
 
 """ Spaceduck!!!
 "if exists('+termguicolors')
@@ -58,7 +58,7 @@ colorscheme PaperColor
 syntax on
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
-highlight Normal gui=none
+highlight Normal ctermbg=NONE gui=none
 highlight NonText guibg=none
 
 " Transparent Background (For i3 and compton)
@@ -204,3 +204,4 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 tnoremap <Esc> <C-\><C-n>
+
