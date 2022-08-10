@@ -4,49 +4,40 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 """ Vim-Plug
 call plug#begin()
 
-" Aesthetics - Main
-Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
+
+" Aethetics
+Plug 'ryanoasis/vim-devicons'
+Plug 'prettier/vim-prettier', {
+            \ 'do': 'yarn install',
+            \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'nightsense/forgotten'
-Plug 'zaki/zazen'
-Plug 'preservim/nerdtree'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
-" Aethetics - Additional
+" Aesthetics - Themes
 Plug 'ayu-theme/ayu-vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'dev' }
 
 " Functionalities
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
-Plug 'KabbAmine/vCoolor.vim'
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 Plug 'dkarter/bullets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'psliwka/vim-smoothie'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
-
-""" Python3 VirtualEnv
-"let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
 
 """ Ayu theme
 set termguicolors
@@ -54,7 +45,7 @@ let ayucolor="dark"
 colorscheme ayu
 
 
-""" Spaceduck!!! 
+""" Spaceduck!!!
 "if exists('+termguicolors')
 "  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -65,7 +56,6 @@ colorscheme ayu
 
 """ Coloring
 syntax on
-"color dracula
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
@@ -94,8 +84,6 @@ set listchars=tab:‣\ ,trail:·
 """ Plugin Configurations
 " VIM Sneak
 let g:sneak#label = 1
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
 
 " NERDTree
 let NERDTreeShowHidden=1
@@ -109,14 +97,11 @@ let g:airline_section_warning = ''
 "let g:airline#extensions#tabline#enabled = 1
 
 " Neovim :Terminal
-tmap <Esc> <C-\><C-n>
-tmap <C-w> <Esc><C-w>
-tmap <C-d> <Esc>:q<CR>"
+"tmap <Esc> <C-\><C-n>
+"tmap <C-w> <Esc><C-w>
+tmap <Esc> <Esc>:q<CR>"
 "autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
-
-" vim-pydocstring
-let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<C-Space>"
@@ -190,36 +175,40 @@ endfunction
 
 """ Custom Mappings
 let mapleader=" "
-nmap <leader>n :NERDTreeToggle<CR>
-nmap \ <leader>q
-nmap <leader>w :TagbarToggle<CR>
-nmap <leader>ee :Colors<CR>
-nmap <leader>ea :AirlineTheme 
-nmap <leader>e1 :call ColorDracula()<CR>
-nmap <leader>r :so ~/.config/nvim/init.vim<CR>
-nmap <leader>R :edit!<CR>
-nmap <leader>t :call TrimWhitespace()<CR>
-nmap <leader>s <C-w>s<C-w>j:terminal<CR>
-nmap <leader>vs <C-w>v<C-w>l:terminal<CR>
-nmap <leader>d <Plug>(pydocstring)
-nmap <leader>f :Files<CR>
-nmap <leader>h :RainbowParentheses!!<CR>
-nmap <leader>j :set filetype=journal<CR>
-nmap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nmap <leader>` :terminal<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap \ <leader>q
+nnoremap <leader>w :TagbarToggle<CR>
+nnoremap <leader>ee :Colors<CR>
+nnoremap <leader>ea :AirlineTheme
+nnoremap <leader>e1 :call ColorDracula()<CR>
+nnoremap <leader>r :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader>R :edit!<CR>
+nnoremap <leader>t :call TrimWhitespace()<CR>
+nnoremap <leader>s <C-w>s<C-w>j:terminal<CR>
+nnoremap <leader>vs <C-w>v<C-w>l:terminal<CR>
+nnoremap <leader>d <Plug>(pydocstring)
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>h :RainbowParentheses!!<CR>
+nnoremap <leader>j :set filetype=journal<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader>` :terminal<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
-nmap <silent> <leader><leader> :noh<CR>
-nmap <Tab> :bnext<R
-nmap <S-Tab> :bprevious<CR>
-map <up> <C-w><up>
-map <down> <C-w><down>
-map <left> <C-w><left>
-map <right> <C-w><right>
-map <F9> :call TabFile()<CR>
-nmap <leader>y "+y
-nmap <leader>Y gg""
-imap jj <Esc>
-vmap <leader>y "+y
-vmap J :m '>+1<CR>gv=gv
-vmap K :m '<-2<CR>gv=gv
+nnoremap <silent> <leader><leader> :noh<CR>
+nnoremap <Tab> :bnext<R
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <leader>y "+y
+nnoremap <leader>Y gg""
+nnoremap f <Plug>Sneak_s
+nnoremap F <Plug>Sneak_S
+noremap <up> <C-w><up>
+noremap <down> <C-w><down>
+noremap <left> <C-w><left>
+noremap <right> <C-w><right>
+noremap <F9> :call TabFile()<CR>
+inoremap jj <Esc>
+vnoremap <leader>y "+y
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+tnoremap <Esc> <C-\><C-n>
+
