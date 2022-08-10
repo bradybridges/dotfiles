@@ -146,7 +146,4 @@ export NVM_DIR="$HOME/.nvm"
 
 eval $(thefuck --alias)
 
-#alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
-
-#export brew path
-export PATH=/opt/homebrew/bin:$PATH
+alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
