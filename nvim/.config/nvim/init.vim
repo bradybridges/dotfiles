@@ -7,13 +7,13 @@ endif
 """ Vim-Plug
 call plug#begin()
 
-" Aethetics
+" Aesthetics
 Plug 'ryanoasis/vim-devicons'
-Plug 'prettier/vim-prettier', {
-            \ 'do': 'yarn install',
-            \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " Aesthetics - Themes
 Plug 'ayu-theme/ayu-vim'
@@ -29,7 +29,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
-"Plug 'honza/vim-snippets'
 Plug 'dkarter/bullets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -39,11 +38,12 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 call plug#end()
 
-""" Ayu theme
+""" Theme
 set termguicolors
 "let ayucolor="dark"
 set background=dark
 colorscheme PaperColor
+
 
 """ Spaceduck!!!
 "if exists('+termguicolors')
@@ -51,8 +51,6 @@ colorscheme PaperColor
 "  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "  set termguicolors
 "endif
-
-"colorscheme spaceduck
 
 """ Coloring
 syntax on
@@ -81,7 +79,6 @@ set scrolloff=8
 set listchars=tab:‣\ ,trail:·
 
 """ Plugin Configurations
-
 " VIM Sneak
 let g:sneak#label = 1
 
@@ -154,19 +151,13 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
-" Dracula Mode (Dark)
-function! ColorDracula()
-    let g:airline_theme=''
-    color dracula
-    IndentLinesEnable
-endfunction
-
 function! TabFile() abort
     set expandtab!
     %retab!
 endfunction
 
 """ Custom Mappings
+
 let mapleader=" "
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap \ <leader>q
