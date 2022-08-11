@@ -61,12 +61,12 @@ highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
-let g:rainbow_active = 1
-
-" Transparent Background (For i3 and compton)
-"highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE guifg=white ctermbg=NONE
 highlight CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+let g:rainbow_active = 1
+
+set cursorline
 
 """ Other Configurations
 filetype plugin indent on
