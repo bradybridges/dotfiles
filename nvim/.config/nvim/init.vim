@@ -61,7 +61,7 @@ highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
-highlight LineNr guibg=NONE guifg=white ctermbg=NONE
+highlight LineNr guibg=NONE guifg=Gray ctermbg=NONE
 highlight CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 let g:rainbow_active = 1
