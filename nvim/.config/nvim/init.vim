@@ -7,13 +7,12 @@ endif
 """ Vim-Plug
 call plug#begin()
 
-" Aethetics
-Plug 'ryanoasis/vim-devicons'
-Plug 'prettier/vim-prettier', {
-            \ 'do': 'yarn install',
-            \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Aesthetics
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " Aesthetics - Themes
 Plug 'ayu-theme/ayu-vim'
@@ -29,18 +28,22 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
-"Plug 'honza/vim-snippets'
 Plug 'dkarter/bullets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'frazrepo/vim-rainbow'
+
+" Load devicons last(per docs)
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-""" Ayu theme
+""" Theme
 set termguicolors
+set guifont=DroidSansMono\ Nerd\ Font:h11
 "let ayucolor="dark"
 set background=dark
 colorscheme PaperColor
@@ -52,18 +55,18 @@ colorscheme PaperColor
 "  set termguicolors
 "endif
 
-"colorscheme spaceduck
-
 """ Coloring
 syntax on
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
+highlight LineNr guibg=NONE guifg=Gray ctermbg=NONE
+highlight CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+let g:rainbow_active = 1
 
-" Transparent Background (For i3 and compton)
-"highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE guifg=gray ctermbg=NONE
+set cursorline
 
 """ Other Configurations
 filetype plugin indent on
@@ -81,7 +84,6 @@ set scrolloff=8
 set listchars=tab:‣\ ,trail:·
 
 """ Plugin Configurations
-
 " VIM Sneak
 let g:sneak#label = 1
 
@@ -100,6 +102,7 @@ let g:airline_section_warning = ''
 tmap <Esc> <Esc>:q<CR>"
 "autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " indentLine
 let g:indentLine_char = '▏'
@@ -154,19 +157,13 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
-" Dracula Mode (Dark)
-function! ColorDracula()
-    let g:airline_theme=''
-    color dracula
-    IndentLinesEnable
-endfunction
-
 function! TabFile() abort
     set expandtab!
     %retab!
 endfunction
 
 """ Custom Mappings
+
 let mapleader=" "
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap \ <leader>q
