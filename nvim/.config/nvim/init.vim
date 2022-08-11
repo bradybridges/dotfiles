@@ -102,6 +102,7 @@ let g:airline_section_warning = ''
 tmap <Esc> <Esc>:q<CR>"
 "autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " indentLine
 let g:indentLine_char = '▏'
