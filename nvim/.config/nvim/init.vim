@@ -66,6 +66,7 @@ let g:rainbow_active = 1
 " Transparent Background (For i3 and compton)
 "highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE guifg=white ctermbg=NONE
+highlight CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 
 """ Other Configurations
 filetype plugin indent on
