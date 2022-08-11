@@ -8,7 +8,6 @@ endif
 call plug#begin()
 
 " Aesthetics
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier', {
@@ -35,15 +34,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'frazrepo/vim-rainbow'
+
+" Load devicons last(per docs)
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 """ Theme
 set termguicolors
+set guifont=DroidSansMono\ Nerd\ Font:h11
 "let ayucolor="dark"
 set background=dark
 colorscheme PaperColor
-
 
 """ Spaceduck!!!
 "if exists('+termguicolors')
@@ -58,10 +61,11 @@ highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
+let g:rainbow_active = 1
 
 " Transparent Background (For i3 and compton)
 "highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE guifg=gray ctermbg=NONE
+highlight LineNr guibg=NONE guifg=white ctermbg=NONE
 
 """ Other Configurations
 filetype plugin indent on
