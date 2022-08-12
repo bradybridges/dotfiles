@@ -16,7 +16,7 @@ Plug 'prettier/vim-prettier', {
 
 " Aesthetics - Themes
 Plug 'ayu-theme/ayu-vim'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'dev' }
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'NLKNguyen/papercolor-theme'
 
 " Functionalities
@@ -42,11 +42,22 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 """ Theme
-set termguicolors
+"set termguicolors
 set guifont=DroidSansMono\ Nerd\ Font:h11
 "let ayucolor="dark"
-set background=dark
-colorscheme PaperColor
+"set background=dark
+"colorscheme PaperColor
+
+""" Spaceduck
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+let g:airline_theme = 'spaceduck'
+
+colorscheme spaceduck
 
 """ Spaceduck!!!
 "if exists('+termguicolors')
