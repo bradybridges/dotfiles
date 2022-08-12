@@ -16,7 +16,7 @@ Plug 'prettier/vim-prettier', {
 
 " Aesthetics - Themes
 Plug 'ayu-theme/ayu-vim'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'dev' }
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'NLKNguyen/papercolor-theme'
 
 " Functionalities
@@ -35,6 +35,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'frazrepo/vim-rainbow'
+Plug 'ervandew/supertab'
 
 " Load devicons last(per docs)
 Plug 'ryanoasis/vim-devicons'
@@ -45,15 +46,17 @@ call plug#end()
 set termguicolors
 set guifont=DroidSansMono\ Nerd\ Font:h11
 "let ayucolor="dark"
-set background=dark
-colorscheme PaperColor
+"set background=dark
+colorscheme spaceduck
 
 """ Spaceduck!!!
-"if exists('+termguicolors')
-"  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"  set termguicolors
-"endif
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  "set termguicolors
+endif
+
+let g:airline_theme = 'spaceduck'
 
 """ Coloring
 syntax on
@@ -132,6 +135,9 @@ let g:fzf_colors =
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
   \ ]
+
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 """ Filetype-Specific Configurations
 
