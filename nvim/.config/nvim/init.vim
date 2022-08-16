@@ -44,26 +44,26 @@ call plug#end()
 
 """ Theme
 set termguicolors
-set guifont=DroidSansMono\ Nerd\ Font:h11
-"let ayucolor="dark"
+"set guifont=DroidSansMono\ Nerd\ Font:h11
+let ayucolor="dark"
 "set background=dark
-colorscheme spaceduck
+colorscheme ayu
 
 """ Spaceduck!!!
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"if exists('+termguicolors')
+"  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   "set termguicolors
-endif
+"endif
 
-let g:airline_theme = 'spaceduck'
+let g:airline_theme = 'ayu_dark'
 
 """ Coloring
 syntax on
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
-highlight Normal gui=none
-highlight NonText guibg=none
+highlight Normal gui=NONE guibg=NONE ctermbg=NONE
+highlight NonText guibg=NONE
 highlight LineNr guibg=NONE guifg=Gray ctermbg=NONE
 highlight CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
