@@ -42,22 +42,21 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 """ Theme
-"set termguicolors
+set termguicolors
 set guifont=DroidSansMono\ Nerd\ Font:h11
-"let ayucolor="dark"
+let ayucolor="dark"
 "set background=dark
-"colorscheme PaperColor
+colorscheme ayu
 
 """ Spaceduck
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+"if exists('+termguicolors')
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"endif
 
 let g:airline_theme = 'spaceduck'
 
-colorscheme spaceduck
+"colorscheme spaceduck
 
 """ Spaceduck!!!
 "if exists('+termguicolors')
@@ -75,6 +74,7 @@ highlight NonText guibg=none
 highlight LineNr guibg=NONE guifg=Gray ctermbg=NONE
 highlight CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+highlight Normal cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 let g:rainbow_active = 1
 
 set cursorline
