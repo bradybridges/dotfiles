@@ -12,6 +12,9 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- New tab
 keymap.set('n', 'te', ':tabedit')
 
+-- Reload File
+keymap.set('n', 'R', ':edit!<CR>');
+
 -- Split window
 keymap.set('n', 's', '<C-w>s<C-w>j:terminal<CR>')
 keymap.set('n', 'vs', '<C-w>v<C-w>l:terminal<CR>')
@@ -36,7 +39,7 @@ keymap.set('v', 'J', ':m \'>+1<CR>gv=gv')
 keymap.set('v', 'K', ':m \'<-2<CR>gv=gv')
 
 -- Copy To Clipboard
-keymap.set('v', '<Space>y', '"+y')
+keymap.set('v', 'Y', '"+y')
 
 -- Find Selected
 keymap.set('v', '//', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>')
@@ -52,3 +55,7 @@ keymap.set('n', 'f',
     "<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>")
 keymap.set('n', 'F',
     "<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>")
+keymap.set('n', 's',
+    "<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+keymap.set('n', 'S',
+    "<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
