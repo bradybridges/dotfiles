@@ -23,7 +23,6 @@ packer.startup(function(use)
 	use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig.nvim'
-
 	use 'glepnir/lspsaga.nvim' -- LSP UIs
 	use 'L3MON4D3/LuaSnip'
 	use {
@@ -42,7 +41,6 @@ packer.startup(function(use)
 	--run = function() vim.fn["mkdp#util#install"]() end,
 	--})
 	use 'akinsho/nvim-bufferline.lua'
-
 	use 'lewis6991/gitsigns.nvim'
 	use 'dinhhuy258/git.nvim' -- For git blame & browse
 	use {
