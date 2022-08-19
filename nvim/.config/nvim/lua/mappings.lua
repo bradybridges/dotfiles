@@ -27,12 +27,21 @@ keymap.set('n', 'R', ':edit!<CR>')
 -- Tab File
 keymap.set('n', '<F9>', ':retab!<CR>');
 
+-- Replace Trailing Whitespaces
+local function TrimWhitespaces()
+	local save = vim.fn.winsaveview()
+	vim.cmd('%s/\\\\\\@<!\\s\\+$//e')
+	vim.fn.winrestview(save)
+end
+
+keymap.set('n', '<Space>T', TrimWhitespaces)
+
 -- Split window
 keymap.set('n', 's', '<C-w>s<C-w>j:terminal<CR>')
 keymap.set('n', 'vs', '<C-w>v<C-w>l:terminal<CR>')
 
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
+--keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('n', '<up>', '<C-w><up>')
 keymap.set('n', '<down>', '<C-w><down>')
 keymap.set('n', '<left>', '<C-w><left>')
@@ -65,3 +74,7 @@ keymap.set('n', 'f',
 	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<CR>")
 keymap.set('n', 'F',
 	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<CR>")
+keymap.set('n', '<Space>s',
+	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
+keymap.set('n', '<Space>S',
+	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
