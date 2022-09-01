@@ -35,11 +35,7 @@ packer.startup(function(use)
 	use 'windwp/nvim-autopairs'
 	use 'windwp/nvim-ts-autotag'
 	use 'norcalli/nvim-colorizer.lua'
-	--use 'folke/zen-mode.nvim'
-	--use({
-	--"iamcco/markdown-preview.nvim",
-	--run = function() vim.fn["mkdp#util#install"]() end,
-	--})
+	use 'folke/zen-mode.nvim'
 	use 'akinsho/nvim-bufferline.lua'
 	use 'lewis6991/gitsigns.nvim'
 	use 'dinhhuy258/git.nvim' -- For git blame & browse
@@ -52,4 +48,5 @@ packer.startup(function(use)
 		end
 	}
 	use 'p00f/nvim-ts-rainbow'
+	use "lukas-reineke/indent-blankline.nvim"
 end)
