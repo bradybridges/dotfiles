@@ -1,7 +1,5 @@
 local keymap = vim.keymap
 
-keymap.set('n', 'x', '"_x')
-
 -- Reload Config
 keymap.set('n', '<Space><Enter>', ':luafile %<CR>')
 
@@ -37,8 +35,10 @@ end
 keymap.set('n', '<Space>T', TrimWhitespaces)
 
 -- Split window
-keymap.set('n', 's', '<C-w>s<C-w>j:terminal<CR>')
-keymap.set('n', 'vs', '<C-w>v<C-w>l:terminal<CR>')
+keymap.set('n', 's', '<C-w>s<C-w>j')
+keymap.set('n', 'vs', '<C-w>v<C-w>l')
+keymap.set('n', 'ts', '<C-w>s<C-w>j:terminal<CR>')
+keymap.set('n', 'tvs', '<C-w>v<C-w>l:terminal<CR>')
 
 -- Move window
 --keymap.set('n', '<Space>', '<C-w>w')
