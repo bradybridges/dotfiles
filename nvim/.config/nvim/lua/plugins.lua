@@ -1,17 +1,35 @@
-local status, packer = pcall(require, "packer")
+local status, packer = pcall(require, 'packer')
 if (not status) then
-	print("Packer is not installed")
+	print('Packer is not installed')
 	return
 end
 
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-	use 'wbthomason/packer.nvim'
 	use {
 		'svrana/neosolarized.nvim',
 		requires = { 'tjdevries/colorbuddy.nvim' }
 	}
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	}
+	use {
+		'phaazon/hop.nvim',
+		branch = 'v2',
+	}
+	use({
+		"kylechui/nvim-surround",
+		requires = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end
+	})
+	use 'wbthomason/packer.nvim' -- Plugin Manager
 	use 'nvim-lualine/lualine.nvim' -- Statusline
 	use 'nvim-lua/plenary.nvim' -- Common utilities
 	use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -25,10 +43,6 @@ packer.startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 	use 'glepnir/lspsaga.nvim' -- LSP UIs
 	use 'L3MON4D3/LuaSnip'
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
 	use 'kyazdani42/nvim-web-devicons' -- File icons
 	use 'nvim-telescope/telescope.nvim'
 	use 'nvim-telescope/telescope-file-browser.nvim'
@@ -39,14 +53,8 @@ packer.startup(function(use)
 	use 'akinsho/nvim-bufferline.lua'
 	use 'lewis6991/gitsigns.nvim'
 	use 'dinhhuy258/git.nvim' -- For git blame & browse
-	use {
-		'phaazon/hop.nvim',
-		branch = 'v2',
-		config = function()
-			--config here :h hop-config
-			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-		end
-	}
-	use 'p00f/nvim-ts-rainbow'
-	use "lukas-reineke/indent-blankline.nvim"
+	use 'p00f/nvim-ts-rainbow' -- Rainbow brackets
+	use 'lukas-reineke/indent-blankline.nvim' -- Indentation highlights
+	use 'numToStr/FTerm.nvim' -- Floating Terminal
+	use 'declancm/cinnamon.nvim' -- Smoother scrolling
 end)
