@@ -1,6 +1,6 @@
 local status, hop = pcall(require, "hop")
 
-if (not status) then end
+if (not status) then return end
 
 local keymap = vim.keymap
 
