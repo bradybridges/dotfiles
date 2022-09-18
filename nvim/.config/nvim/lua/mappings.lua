@@ -68,13 +68,3 @@ keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Open Terminal
 keymap.set('n', '<Space>`', ':terminal<CR>')
-
--- Hop
-keymap.set('n', 'f',
-	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<CR>")
-keymap.set('n', 'F',
-	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<CR>")
-keymap.set('n', '<Space>s',
-	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
-keymap.set('n', '<Space>S',
-	"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
