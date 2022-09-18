@@ -41,7 +41,6 @@ keymap.set('n', 'ts', '<C-w>s<C-w>j:terminal<CR>')
 keymap.set('n', 'tvs', '<C-w>v<C-w>l:terminal<CR>')
 
 -- Move window
---keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('n', '<up>', '<C-w><up>')
 keymap.set('n', '<down>', '<C-w><down>')
 keymap.set('n', '<left>', '<C-w><left>')
