@@ -49,4 +49,5 @@ packer.startup(function(use)
 	use 'dinhhuy258/git.nvim' -- For git blame & browse
 	use 'p00f/nvim-ts-rainbow'
 	use "lukas-reineke/indent-blankline.nvim"
+	use "numToStr/FTerm.nvim"
 end)
