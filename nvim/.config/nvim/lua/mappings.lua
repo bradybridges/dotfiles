@@ -66,4 +66,4 @@ keymap.set('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>')
 keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Open Terminal
-keymap.set('n', '<Space>`', ':terminal<CR>')
+keymap.set('n', '<Space>~', ':terminal<CR>')
