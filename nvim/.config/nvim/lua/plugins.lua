@@ -56,5 +56,4 @@ packer.startup(function(use)
 	use 'p00f/nvim-ts-rainbow' -- Rainbow brackets
 	use 'lukas-reineke/indent-blankline.nvim' -- Indentation highlights
 	use 'numToStr/FTerm.nvim' -- Floating Terminal
-	use 'declancm/cinnamon.nvim' -- Smoother scrolling
 end)
