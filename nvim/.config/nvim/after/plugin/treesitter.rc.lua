@@ -4,22 +4,16 @@ if (not status) then return end
 ts.setup {
 	highlight = {
 		enable = true,
-		disable = {},
+		use_languagetree = true,
 	},
 	indent = {
 		enable = true,
-		disable = {},
 	},
 	ensure_installed = {
 		"tsx",
-		"json",
-		"yaml",
-		"css",
-		"scss",
-		"html",
-		"lua",
 		"javascript",
 		"typescript",
+		"lua",
 	},
 	autotag = {
 		enable = true,
