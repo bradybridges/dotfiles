@@ -35,6 +35,7 @@ opt.syntax = 'ON'
 opt.list = true
 opt.autoread = true
 opt.listchars = 'tab:▶ ,trail:·,space:·'
+opt.mouse =
 
 -- Undercurl
 cmd([[let &t_Cs = "\e[4:3m"]])
