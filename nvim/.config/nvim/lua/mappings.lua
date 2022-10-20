@@ -14,7 +14,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 keymap.set('v', 'Y', '"+y')
 
 -- New tab
-keymap.set('n', 'te', ':tabedit')
+keymap.set('n', 'te', ':tabedit<CR>')
 
 -- Close Tab
 keymap.set('n', 'tw', ':tabclose<CR>')
@@ -45,6 +45,14 @@ keymap.set('n', '<up>', '<C-w><up>')
 keymap.set('n', '<down>', '<C-w><down>')
 keymap.set('n', '<left>', '<C-w><left>')
 keymap.set('n', '<right>', '<C-w><right>')
+keymap.set('n', '<C-k>', '<C-w><up>')
+keymap.set('n', '<C-j>', '<C-w><down>')
+keymap.set('n', '<C-h>', '<C-w><left>')
+keymap.set('n', '<C-l>', '<C-w><right>')
+
+-- Next/Prev Buffer
+keymap.set('n', 'bn', ':bnext<CR>')
+keymap.set('n', 'bp', ':bprevious<CR>')
 
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
@@ -66,4 +74,4 @@ keymap.set('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>')
 keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Open Terminal
-keymap.set('n', '<Space>`', ':terminal<CR>')
+keymap.set('n', '<Space>~', ':terminal<CR>')
