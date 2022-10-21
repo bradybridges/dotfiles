@@ -1,7 +1,10 @@
 local keymap = vim.keymap
 
+-- Leader
+vim.g.mapleader = ' '
+
 -- Reload Config
-keymap.set('n', '<Space><Enter>', ':luafile %<CR>')
+keymap.set('n', '<Leader><Enter>', ':luafile %<CR>')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
@@ -32,13 +35,19 @@ local function TrimWhitespaces()
 	vim.fn.winrestview(save)
 end
 
-keymap.set('n', '<Space>T', TrimWhitespaces)
+keymap.set('n', '<Leader>T', TrimWhitespaces)
 
 -- Split window
 keymap.set('n', 's', '<C-w>s<C-w>j')
 keymap.set('n', 'vs', '<C-w>v<C-w>l')
 keymap.set('n', 'ts', '<C-w>s<C-w>j:terminal<CR>')
 keymap.set('n', 'tvs', '<C-w>v<C-w>l:terminal<CR>')
+
+-- Vertical Split To Horizontal
+keymap.set('n', '<Leader>ts', '<C-w>t<C-w>K')
+
+-- Horizontal Split to Vertical
+keymap.set('n', '<Leader>tv', '<C-w>t<C-w>H')
 
 -- Move window
 keymap.set('n', '<up>', '<C-w><up>')
@@ -55,10 +64,10 @@ keymap.set('n', 'bn', ':bnext<CR>')
 keymap.set('n', 'bp', ':bprevious<CR>')
 
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+keymap.set('n', '<Leader><left>', '<C-w><')
+keymap.set('n', '<Leader><right>', '<C-w>>')
+keymap.set('n', '<Leader><up>', '<C-w>+')
+keymap.set('n', '<Leader><down>', '<C-w>-')
 
 -- Insert Mode
 keymap.set('i', 'jj', '<Esc>')
@@ -74,4 +83,4 @@ keymap.set('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>')
 keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Open Terminal
-keymap.set('n', '<Space>~', ':terminal<CR>')
+keymap.set('n', '<Leader>~', ':terminal<CR>')
