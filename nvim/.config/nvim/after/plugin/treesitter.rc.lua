@@ -5,16 +5,12 @@ ts.setup {
 	highlight = {
 		enable = true,
 		use_languagetree = true,
+		additional_vim_regex_highlighting = true,
 	},
 	indent = {
 		enable = true,
 	},
-	ensure_installed = {
-		"tsx",
-		"javascript",
-		"typescript",
-		"lua",
-	},
+	ensure_installed = 'all',
 	autotag = {
 		enable = true,
 	},
