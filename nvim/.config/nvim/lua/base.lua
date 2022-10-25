@@ -16,7 +16,8 @@ opt.showcmd = true
 opt.cmdheight = 1
 opt.laststatus = 2
 opt.expandtab = false
-opt.scrolloff = 10
+opt.scrolloff = 8
+opt.sidescrolloff = 8
 opt.backupskip = { '/tmp/*', '/private/tmp/*' }
 opt.inccommand = 'split'
 opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
@@ -35,7 +36,11 @@ opt.syntax = 'ON'
 opt.list = true
 opt.autoread = true
 opt.listchars = 'tab:▶ ,trail:·,space:·'
-opt.mouse =
+opt.mouse = ''
+opt.swapfile = false
+opt.timeoutlen = 1000
+opt.updatetime = 300
+opt.completeopt = { 'menuone', 'noselect' }
 
 -- Undercurl
 cmd([[let &t_Cs = "\e[4:3m"]])
