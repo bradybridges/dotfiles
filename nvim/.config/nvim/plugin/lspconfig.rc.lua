@@ -63,14 +63,14 @@ protocol.CompletionItemKind = {
 }
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
 	vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.flow.setup {
+--[[ nvim_lsp.flow.setup {
 	on_attach = on_attach,
 	capabilities = capabilities
-}
+} ]] --
 
 nvim_lsp.tsserver.setup {
 	on_attach = on_attach,
@@ -79,9 +79,17 @@ nvim_lsp.tsserver.setup {
 	capabilities = capabilities
 }
 
-nvim_lsp.sourcekit.setup {
-	on_attach = on_attach,
+nvim_lsp.html.setup {
+	capabilities = capabilities,
 }
+
+nvim_lsp.cssls.setup {
+	capabilities = capabilities,
+}
+
+nvim_lsp.tailwindcss.setup {}
+
+nvim_lsp.cssmodules_ls.setup {}
 
 nvim_lsp.sumneko_lua.setup {
 	on_attach = on_attach,
@@ -101,16 +109,19 @@ nvim_lsp.sumneko_lua.setup {
 	},
 }
 
-nvim_lsp.tailwindcss.setup {}
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
 	update_in_insert = false,
-	virtual_text = { spacing = 4, prefix = "●" },
+	virtual_text = { spacing = 4, prefix = "" },
 	severity_sort = true,
-}
-)
+	float = {
+		focusable = false,
+		style = 'minimal',
+		border = 'rounded',
+		source = 'always',
+	},
+})
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -121,10 +132,13 @@ end
 
 vim.diagnostic.config({
 	virtual_text = {
-		prefix = '●'
+		prefix = ''
 	},
 	update_in_insert = true,
 	float = {
-		source = "always", -- Or "if_many"
+		focusable = false,
+		style = 'minimal',
+		border = 'rounded',
+		source = 'always',
 	},
 })
