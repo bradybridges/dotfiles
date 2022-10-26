@@ -10,4 +10,4 @@ fTerm.setup({
 	},
 })
 
-vim.keymap.set('n', '<Space>`', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('n', '<Space>`', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
