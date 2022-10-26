@@ -31,9 +31,15 @@ opt.termguicolors = true
 opt.relativenumber = true
 opt.syntax = "ON"
 opt.scrolloff = 8
+opt.sidescrolloff = 8
 opt.list = true
 opt.listchars = "tab:▸ ,trail:·,space:·"
 opt.autoread = true
+opt.swapfile = false
+opt.timeoutlen = 1000
+opt.updatetime = 300
+opt.completeopt = {'menuone', 'noselect'}
+opt.mouse =
 
 -- Undercurl
 cmd([[let &t_Cs = "\e[4:3m"]])
