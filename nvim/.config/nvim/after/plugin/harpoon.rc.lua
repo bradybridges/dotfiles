@@ -1,6 +1,5 @@
 local keymap = vim.keymap
 
-keymap.set('n', ';h', "<cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>")
 keymap.set('n', '<Space>a', "<cmd>lua require'harpoon.mark'.add_file()<CR>")
 keymap.set('n', 'hn', "<cmd>lua require'harpoon.ui'.nav_next()<CR>")
 keymap.set('n', 'hp', "<cmd>lua require'harpoon.ui'.nav_prev()<CR>")

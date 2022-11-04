@@ -137,3 +137,6 @@ vim.keymap.set("n", "sf", function()
 		layout_config = { height = 40 }
 	})
 end)
+
+telescope.load_extension("harpoon")
+vim.keymap.set('n', ';h', "<cmd>Telescope harpoon marks<CR>")
