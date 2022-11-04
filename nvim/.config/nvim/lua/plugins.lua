@@ -52,6 +52,7 @@ packer.startup(function(use)
 	-- Telescope
 	use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
 	use 'nvim-telescope/telescope-file-browser.nvim' -- File browser for telescope
+	use 'ThePrimeagen/harpoon' -- Mark files and more
 
 	-- Pair Autocompletion
 	use 'windwp/nvim-autopairs' -- Adds pairs for quotes, brackets, etc
