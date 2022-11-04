@@ -66,6 +66,7 @@ packer.startup(function(use)
 	-- Telescope
 	use 'nvim-telescope/telescope.nvim'
 	use 'nvim-telescope/telescope-file-browser.nvim'
+	use 'ThePrimeagen/harpoon' -- Mark files and more
 
 	-- LSP
 	use 'neovim/nvim-lspconfig' -- LSP
