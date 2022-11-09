@@ -82,4 +82,7 @@ packer.startup(function(use)
 	use 'hrsh7th/cmp-nvim-lua' -- nvim-cmp source for lua
 	use 'hrsh7th/cmp-path' -- nvim-cmp source for path
 
+	-- Commenting
+	use 'numToStr/Comment.nvim'
+	use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)
