@@ -11,7 +11,7 @@ ts.setup {
 	},
 	indent = {
 		enable = true,
-		disable = {},
+		disable = { 'css', 'scss' },
 	},
 	autotag = {
 		enable = true,
