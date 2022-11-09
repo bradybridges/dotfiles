@@ -2,6 +2,7 @@ local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
 ts.setup {
+	ensure_installed = 'all',
 	highlight = {
 		enable = true,
 		use_languagetree = true,
@@ -10,15 +11,18 @@ ts.setup {
 	indent = {
 		enable = true,
 	},
-	ensure_installed = 'all',
 	autotag = {
 		enable = true,
 	},
 	rainbow = {
 		enable = true,
-		extended_mode = false,
+		extended_mode = true,
 		max_file_lines = 1000,
-	}
+	},
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
