@@ -5,6 +5,10 @@ local api = vim.api
 
 cmd("autocmd!")
 
+-- Recommended for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 wo.number = true
 
 opt.title = true

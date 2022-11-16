@@ -54,6 +54,8 @@ packer.startup(function(use)
 	use 'windwp/nvim-ts-autotag'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'nvim-tree/nvim-tree.lua'
+
 
 	-- Git
 	use 'lewis6991/gitsigns.nvim'
