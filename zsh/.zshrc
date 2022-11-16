@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat="~/superCat.sh"
+alias lg="lazygit"
 alias gs="git status"
 alias gc="git commit"
 alias gd="git diff"
