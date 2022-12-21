@@ -77,6 +77,9 @@ keymap.set("v", ">", ">gv", opts)
 keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
 
+-- Maintain yank when pasting over visual selections
+keymap.set('x', 'p', 'pgvy')
+
 -- Find Selected
 keymap.set('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', opts)
 
