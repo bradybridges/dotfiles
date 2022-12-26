@@ -10,4 +10,16 @@ fTerm.setup({
 	},
 })
 
-vim.keymap.set('n', ';`', '<CMD>lua require("FTerm").toggle()<CR>')
+-- Lazygit floating terminal
+local lg = fTerm:new({
+	cmd = "lazygit"
+})
+
+-- Toggle fTerm
+vim.keymap.set('n', ';`', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
+
+-- toggle fTerm lazygit terminal
+vim.keymap.set('n', ';l', function()
+	lg:toggle()
+end)
+
