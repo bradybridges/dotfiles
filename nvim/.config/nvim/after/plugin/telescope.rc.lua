@@ -138,6 +138,13 @@ vim.keymap.set("n", "sf", function()
 	})
 end)
 
+vim.keymap.set('n', ';gc', function()
+	builtin.git_commits()
+end)
+
+vim.keymap.set('n', ';gs', function()
+	builtin.git_status()
+end)
+
 telescope.load_extension("harpoon")
 vim.keymap.set('n', ';h', "<cmd>Telescope harpoon marks<CR>")
-
