@@ -88,3 +88,6 @@ keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -- Open Terminal
 keymap.set('n', '<Leader>~', ':terminal<CR>', opts)
+
+-- Clear search highlight
+keymap.set('n', ';x', ':noh<CR>')
