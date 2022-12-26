@@ -110,21 +110,27 @@ vim.keymap.set('n', ';f',
 			hidden = true
 		})
 	end)
+
 vim.keymap.set('n', ';r', function()
 	builtin.live_grep()
 end)
+
 vim.keymap.set('n', '\\\\', function()
 	builtin.buffers()
 end)
+
 vim.keymap.set('n', ';t', function()
 	builtin.help_tags()
 end)
+
 vim.keymap.set('n', ';;', function()
 	builtin.resume()
 end)
+
 vim.keymap.set('n', ';e', function()
 	builtin.diagnostics()
 end)
+
 vim.keymap.set("n", "sf", function()
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h",
@@ -136,6 +142,14 @@ vim.keymap.set("n", "sf", function()
 		initial_mode = "normal",
 		layout_config = { height = 40 }
 	})
+end)
+
+vim.keymap.set('n', ';gc', function()
+	builtin.git_commits()
+end)
+
+vim.keymap.set('n', ';gs', function()
+	builtin.git_status()
 end)
 
 telescope.load_extension("harpoon")
