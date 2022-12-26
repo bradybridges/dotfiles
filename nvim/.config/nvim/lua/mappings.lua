@@ -70,12 +70,15 @@ keymap.set('n', '<down>', ':resize +2<CR>', opts)
 keymap.set('i', 'jj', '<Esc>', opts)
 
 -- Stay in indent mode
-keymap.set("v", "<", "<gv", opts)
-keymap.set("v", ">", ">gv", opts)
+keymap.set('v', '<', '<gv', opts)
+keymap.set('v', '>', '>gv', opts)
 
 -- Move blocks up and down
-keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap.set('x', 'J', ":move '>+1<CR>gv-gv", opts)
+keymap.set('x', 'K', ":move '<-2<CR>gv-gv", opts)
+
+-- Keep yank after pasting over visually selected text
+keymap.set('x', 'p', 'pgvy')
 
 -- Find Selected
 keymap.set('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', opts)
