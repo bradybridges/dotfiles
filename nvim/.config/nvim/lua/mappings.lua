@@ -68,6 +68,7 @@ keymap.set('n', '<down>', ':resize +2<CR>', opts)
 
 -- Insert Mode
 keymap.set('i', 'jj', '<Esc>', opts)
+keymap.set('i', 'jk', '<Esc>', opts)
 
 -- Stay in indent mode
 keymap.set("v", "<", "<gv", opts)
