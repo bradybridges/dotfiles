@@ -164,3 +164,7 @@ export NVM_DIR="$HOME/.nvm"
 eval $(thefuck --alias)
 
 alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_ALT_C_COMMAND="fd -t d . ~/projects/"
