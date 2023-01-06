@@ -135,6 +135,7 @@ alias nrd="npm run dev"
 alias history="history | fzf"
 alias n="nvim"
 alias vim="nvim"
+alias ios="open -a simulator"
 
 # Visual customisation of the second prompt line
 local user_symbol="$"
