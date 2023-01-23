@@ -87,4 +87,7 @@ packer.startup(function(use)
 	-- Commenting
 	use 'numToStr/Comment.nvim'
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+	-- Colorscheme creation helper
+	use 'rktjmp/lush.nvim'
 end)
