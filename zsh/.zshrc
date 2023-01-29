@@ -4,6 +4,10 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 fi
+
+# Get feed path
+PATH="$PATH:$HOME/.local/bin"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -106,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat="~/superCat.sh"
+alias lg="lazygit"
 alias gs="git status"
 alias gc="git commit"
 alias gd="git diff"
@@ -114,6 +119,8 @@ alias gl="git log"
 alias gco="git checkout"
 alias gp="git pull"
 alias gpo="git push origin HEAD"
+alias soft-reset="git reset --soft HEAD~1"
+alias restore="git restore --staged"
 alias cypress="npm run cypress"
 alias lighthouse="npm run build && npm run cypress"
 alias eth="curl rate.sx/eth@2w"
@@ -126,19 +133,30 @@ alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.
 alias snap="cd ~/projects/snap"
 alias nrd="npm run dev"
 alias history="history | fzf"
+alias n="nvim"
+alias vim="nvim"
+alias ios="open -a simulator"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
-# Add a space in the first prompt
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 # Visual customisation of the second prompt line
 local user_symbol="$"
 if [[ $(print -P "%#") =~ "#" ]]; then
-    user_symbol = "#"
+	user_symbol = "#"
 fi
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+
+# Add a space in the first prompt
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time battery)
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_USER_ICON="\uF415" # 
+POWERLEVEL9K_ROOT_ICON="\uF09C"
+POWERLEVEL9K_SUDO_ICON=$'\uF09C' # 
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+POWERLEVEL9K_VCS_GIT_ICON='\uF408 '
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uF408 '
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -146,7 +164,8 @@ export NVM_DIR="$HOME/.nvm"
 
 eval $(thefuck --alias)
 
-#alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
+alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
 
-#export brew path
-export PATH=/opt/homebrew/bin:$PATH
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_ALT_C_COMMAND="fd -t d . ~/projects/"
