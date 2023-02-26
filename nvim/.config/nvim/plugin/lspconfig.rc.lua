@@ -73,7 +73,7 @@ nvim_lsp.tsserver.setup {
 	capabilities = capabilities
 }
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
 	on_attach = on_attach,
 	settings = {
 		Lua = {
@@ -104,11 +104,6 @@ nvim_lsp.cssmodules_ls.setup {
 nvim_lsp.tailwindcss.setup {}
 
 nvim_lsp.html.setup {
-	capabilities = capabilities,
-}
-
-nvim_lsp.marksman.setup {
-	on_attach = on_attach,
 	capabilities = capabilities,
 }
 
