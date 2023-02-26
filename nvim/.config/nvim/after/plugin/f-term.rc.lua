@@ -3,7 +3,7 @@ local status, fTerm = pcall(require, 'FTerm')
 if (not status) then return end
 
 fTerm.setup({
-	border = 'double',
+	border = 'single',
 	dimensions = {
 		height = 0.9,
 		width = 0.9,
