@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat="~/superCat.sh"
+alias lg="lazygit"
 alias gs="git status"
 alias gc="git commit"
 alias gd="git diff"
@@ -114,6 +115,8 @@ alias gl="git log"
 alias gco="git checkout"
 alias gp="git pull"
 alias gpo="git push origin HEAD"
+alias soft-reset="git reset --soft HEAD~1"
+alias restore="git restore --staged"
 alias cypress="npm run cypress"
 alias lighthouse="npm run build && npm run cypress"
 alias eth="curl rate.sx/eth@2w"
@@ -126,6 +129,9 @@ alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.
 alias snap="cd ~/projects/snap"
 alias nrd="npm run dev"
 alias history="history | fzf"
+alias n="nvim"
+alias vim="nvim"
+alias ios="open -a simulator"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
