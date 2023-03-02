@@ -59,6 +59,7 @@ return packer.startup(function(use)
 	use({ "folke/zen-mode.nvim" }) -- Focus on window
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "phaazon/hop.nvim", branch = "v2" }) -- Move anywhere in buffer
+	use({ "xiyaowong/nvim-transparent" }) -- Toggle nvim transparency
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
