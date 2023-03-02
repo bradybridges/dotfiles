@@ -97,7 +97,7 @@ local mappings = {
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["B"] = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
 	["H"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-
+	["T"] = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -106,7 +106,6 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
-
 	g = {
 		name = "Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
@@ -129,7 +128,6 @@ local mappings = {
 			"Diff",
 		},
 	},
-
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -161,7 +159,6 @@ local mappings = {
 			"Workspace Symbols",
 		},
 	},
-
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -173,7 +170,6 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
-
 	t = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
@@ -184,7 +180,6 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
-
 	h = {
 		name = "Harpoon",
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
