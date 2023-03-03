@@ -187,6 +187,18 @@ local mappings = {
 		n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next Mark" },
 		p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Previous Mark" },
 	},
+	j = {
+		name = "Hop",
+		["f"] = {
+			"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>",
+			"Hop Forward On Line",
+		},
+		["b"] = {
+			"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>",
+			"Hop Backwards On Line",
+		},
+		["a"] = { "<cmd>HopChar2<cr>", "Hop Anywhere In File" },
+	},
 }
 
 which_key.setup(setup)
