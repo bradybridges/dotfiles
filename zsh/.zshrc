@@ -153,3 +153,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #export brew path
 export PATH=/opt/homebrew/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_ALT_C_COMMAND="fd -t d . ~/projects/"
