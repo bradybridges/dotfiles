@@ -45,6 +45,12 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
+local cypress = Terminal:new({ cmd = "npm run cypress", hidden = true })
+
+function _CYPRESS_TOGGLE()
+	cypress:toggle()
+end
+
 local node = Terminal:new({ cmd = "node", hidden = true })
 
 function _NODE_TOGGLE()
