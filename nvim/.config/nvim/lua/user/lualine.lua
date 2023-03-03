@@ -14,7 +14,7 @@ local diagnostics = {
 	symbols = { error = " ", warn = " " },
 	colored = true,
 	update_in_insert = false,
-	always_visible = true,
+	always_visible = false,
 }
 
 local diff = {
