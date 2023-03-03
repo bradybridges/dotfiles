@@ -23,7 +23,7 @@ M.setup = function()
 	end
 
 	local config = {
-		virtual_text = { spacing = 4, prefix = "" }, -- disable virtual text
+		virtual_text = { spacing = 4, prefix = "" }, -- disable virtual text
 		signs = {
 			active = signs, -- show signs
 		},
