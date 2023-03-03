@@ -12,14 +12,14 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }
 
 local diff = {
 	"diff",
-	colored = false,
+	colored = true,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
 	-- cond = hide_in_width
 }
@@ -41,7 +41,7 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "", right = "" },
+		component_separators = { left = "|", right = "|" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
@@ -68,11 +68,11 @@ lualine.setup({
 			{
 				"filename",
 				file_status = true, -- displays file status (readonly status, modified status)
-				path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
 			},
 		},
 		lualine_x = {},
-		lualine_y = {},
+		lualine_y = { "searchcount" },
 		lualine_z = { "hostname" },
 	},
 	tabline = {},
