@@ -1,12 +1,14 @@
-local material_ok, material = pcall(require, 'material')
+local material_ok, material = pcall(require, "material")
 
-if not material_ok then return end
+if not material_ok then
+	return
+end
 
 material.setup({
 	custom_highlights = {
 		Comment = { fg = "#999999" },
 		CursorLine = { bg = "none" },
-		Cursor = { bg = "#999999" }
+		Cursor = { bg = "#84ffff" },
 	},
 	plugins = { -- Uncomment the plugins that you use to highlight them
 		"gitsigns",
@@ -21,5 +23,5 @@ material.setup({
 	disable = {
 		background = false,
 	},
-	lualine_style = "stealth"
+	lualine_style = "stealth",
 })
