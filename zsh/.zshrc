@@ -157,3 +157,5 @@ export PATH=/opt/homebrew/bin:$PATH
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_ALT_C_COMMAND="fd -t d . ~/projects/"
+
+export PATH=~/flutter/bin:$PATH
