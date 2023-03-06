@@ -19,8 +19,8 @@ local setup = {
 			text_objects = true, -- help for text objects triggered after entering an operator
 			windows = true, -- default bindings on <c-w>
 			nav = true, -- misc bindings to work with windows
-			z = true, -- bindings for folds, spelling and others prefixed with z
-			g = true, -- bindings for prefixed with g
+			z = true,   -- bindings for folds, spelling and others prefixed with z
+			g = true,   -- bindings for prefixed with g
 		},
 	},
 	-- add operators that will trigger motion and text object completion
@@ -50,15 +50,15 @@ local setup = {
 		winblend = 0,
 	},
 	layout = {
-		height = { min = 4, max = 25 }, -- min and max height of the columns
-		width = { min = 20, max = 50 }, -- min and max width of the columns
-		spacing = 3, -- spacing between columns
-		align = "left", -- align columns left, center or right
+		height = { min = 4, max = 25 },                                        -- min and max height of the columns
+		width = { min = 20, max = 50 },                                        -- min and max width of the columns
+		spacing = 3,                                                           -- spacing between columns
+		align = "left",                                                        -- align columns left, center or right
 	},
-	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+	ignore_missing = true,                                                     -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-	show_help = true, -- show help message on the command line when the popup is visible
-	triggers = "auto", -- automatically setup triggers
+	show_help = true,                                                          -- show help message on the command line when the popup is visible
+	triggers = "auto",                                                         -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
 		-- list of mode / prefixes that should never be hooked by WhichKey
@@ -70,7 +70,7 @@ local setup = {
 }
 
 local opts = {
-	mode = "n", -- NORMAL mode
+	mode = "n",  -- NORMAL mode
 	prefix = "<leader>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
@@ -79,25 +79,26 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = {
+		["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+		["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Buffers",
 	},
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["f"] = {
+		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+		["w"] = { "<cmd>w!<CR>", "Save" },
+		["q"] = { "<cmd>q!<CR>", "Quit" },
+		["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+		["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files()<cr>",
 		"Find files",
 	},
-	["z"] = { "<cmd>ZenMode<cr>", "ZenMode" },
-	["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-	["B"] = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
-	["H"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["T"] = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
+		["z"] = { "<cmd>ZenMode<cr>", "ZenMode" },
+		["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+		["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+		["C"] = { "<cmd>BufferLinePickClose<cr>", "Pick Buffer" },
+		["B"] = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+		["H"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+		["T"] = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -191,15 +192,15 @@ local mappings = {
 	},
 	j = {
 		name = "Hop",
-		["f"] = {
+			["f"] = {
 			"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>",
 			"Hop Forward On Line",
 		},
-		["b"] = {
+			["b"] = {
 			"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>",
 			"Hop Backwards On Line",
 		},
-		["a"] = { "<cmd>HopChar2<cr>", "Hop Anywhere In File" },
+			["a"] = { "<cmd>HopChar2<cr>", "Hop Anywhere In File" },
 	},
 }
 
