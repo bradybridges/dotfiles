@@ -13,9 +13,9 @@ M.setup = function()
 	local signs = {
 
 		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
+		{ name = "DiagnosticSignWarn",  text = "" },
+		{ name = "DiagnosticSignHint",  text = "" },
+		{ name = "DiagnosticSignInfo",  text = "" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -25,7 +25,7 @@ M.setup = function()
 	local config = {
 		virtual_text = { spacing = 4, prefix = "" }, -- disable virtual text
 		signs = {
-			active = signs, -- show signs
+			active = signs,                     -- show signs
 		},
 		update_in_insert = true,
 		underline = true,
@@ -73,6 +73,10 @@ end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
+		client.server_capabilities.documentFormattingProvider = false
+	end
+
+	if client.name == "html" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 	--
