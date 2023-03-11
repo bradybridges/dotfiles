@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "phaazon/hop.nvim", branch = "v2" }) -- Move anywhere in buffer
 	use({ "xiyaowong/nvim-transparent" }) -- Toggle nvim transparency
+	use({ "norcalli/nvim-colorizer.lua" }) -- Colorize hex & colors
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
