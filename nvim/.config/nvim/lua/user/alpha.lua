@@ -29,7 +29,7 @@ local function footer()
 	-- local fortune = handle:read("*a")
 	-- handle:close()
 	-- return fortune
-	return "TIP OF THE DAY: If you get stuck in vim, just throw away your computer!"
+	return "HINT: If stuck in vim, throw away machine "
 end
 
 dashboard.section.footer.val = footer()
