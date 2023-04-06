@@ -50,8 +50,8 @@ keymap("n", "te", ":tabedit<CR>", opts)
 keymap("n", "tw", ":tabclose<CR>", opts)
 
 -- Next / Prev Tab
-keymap("n", "<Tab>", ":tabNext<cr>", opts);
-keymap("n", "<S-Tab>", ":tablast<cr>", opts);
+keymap("n", "<Tab>", ":tabNext<cr>", opts)
+keymap("n", "<S-Tab>", ":tablast<cr>", opts)
 
 -- Reload File
 keymap("n", "R", ":edit!<CR>", opts)
@@ -60,16 +60,16 @@ keymap("n", "R", ":edit!<CR>", opts)
 keymap("n", "<F9>", ":retab!<CR>", opts)
 
 -- Splits
-keymap('n', 's', '<C-w>s<C-w>j', opts)
-keymap('n', 'vs', '<C-w>v<C-w>l', opts)
-keymap('n', 'ts', '<C-w>s<C-w>j:terminal<CR>', opts)
-keymap('n', 'tvs', '<C-w>v<C-w>l:terminal<CR>', opts)
+keymap("n", "s", "<C-w>s<C-w>j", opts)
+keymap("n", "vs", "<C-w>v<C-w>l", opts)
+keymap("n", "ts", "<C-w>s<C-w>j:terminal<CR>", opts)
+keymap("n", "tvs", "<C-w>v<C-w>l:terminal<CR>", opts)
 
 -- Vertical Split To Horizontal
-keymap('n', '<Leader>ts', '<C-w>t<C-w>K', opts)
+keymap("n", "<Leader>ts", "<C-w>t<C-w>K", opts)
 
 -- Horizontal Split to Vertical
-keymap('n', '<Leader>tv', '<C-w>t<C-w>H', opts)
+keymap("n", "<Leader>tv", "<C-w>t<C-w>H", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -102,13 +102,12 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Find Selected
-keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', opts)
+keymap("v", "//", "y/\\V<C-R>=escape(@\",'/')<CR><CR>", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
-
 
 -- Visual Block --
 -- Move text up and down
@@ -118,4 +117,4 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Maintain yank when pasting over visual selections
-keymap('x', 'p', 'pgvy', opts)
+keymap("x", "p", "pgvy", opts)
