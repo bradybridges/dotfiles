@@ -9,6 +9,7 @@ material.setup({
 		Comment = { fg = "#999999" },
 		CursorLine = { bg = "none" },
 		Cursor = { bg = "#84ffff" },
+		TreesitterContextLineNumber = { fg = "#84ffff" },
 	},
 	plugins = { -- Uncomment the plugins that you use to highlight them
 		"gitsigns",
