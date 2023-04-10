@@ -73,11 +73,11 @@ bufferline.setup({
 		-- end
 	},
 	highlights = {
-		--[[ NOTE: This causes an error on nvim 0.9, look into it ]]
-		--[[ fill = { ]]
-		--[[ 	fg = { attribute = "fg", highlight = "#ff0000" }, ]]
-		--[[ 	bg = { attribute = "bg", highlight = "TabLine" }, ]]
-		--[[ }, ]]
+		fill = {
+			--[[ NOTE: This causes an error on nvim 0.9, look into it ]]
+			--[[ fg = { attribute = "fg", highlight = "#ff0000" }, ]]
+			bg = { attribute = "bg", highlight = "TabLine" },
+		},
 		background = {
 			fg = { attribute = "fg", highlight = "TabLine" },
 			bg = { attribute = "bg", highlight = "TabLine" },
