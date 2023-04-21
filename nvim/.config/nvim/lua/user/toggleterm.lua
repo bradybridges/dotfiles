@@ -51,6 +51,18 @@ function _CYPRESS_TOGGLE()
 	cypress:toggle()
 end
 
+local cypressheadless = Terminal:new({ cmd = "npm run test", hidden = false })
+
+function _HEADLESS_TOGGLE()
+	cypressheadless:toggle()
+end
+
+local vscode = Terminal:new({ cmd = "code .", hidden = "true" })
+
+function _VS_TOGGLE()
+	vscode:toggle()
+end
+
 local node = Terminal:new({ cmd = "node", hidden = true })
 
 function _NODE_TOGGLE()
