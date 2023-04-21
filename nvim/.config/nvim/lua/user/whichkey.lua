@@ -183,6 +183,8 @@ local mappings = {
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		c = { "<cmd>lua _CYPRESS_TOGGLE()<cr>", "Cypress" },
+		s = { "<cmd>lua _HEADLESS_TOGGLE()<cr>", "Headless Cypress" },
+		o = { "<cmd>lua _VS_TOGGLE()<cr>", "VS Code"},
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
