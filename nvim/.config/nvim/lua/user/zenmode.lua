@@ -5,7 +5,7 @@ end
 
 zenMode.setup({
 	window = {
-		width = 1,
+		width = .75,
 		height = 1,
 	},
 })
