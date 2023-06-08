@@ -43,15 +43,15 @@ return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-	use({ "numToStr/Comment.nvim" })
+	use({ "numToStr/Comment.nvim" }) -- Comments
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
-	use({ "kyazdani42/nvim-web-devicons" })
+	use({ "kyazdani42/nvim-web-devicons" }) -- Dev Icons
 	use({ "kyazdani42/nvim-tree.lua" })
-	use({ "akinsho/bufferline.nvim" })
-	use({ "moll/vim-bbye" })
-	use({ "nvim-lualine/lualine.nvim" })
-	use({ "akinsho/toggleterm.nvim" })
-	use({ "ahmedkhalf/project.nvim" })
+	use({ "akinsho/bufferline.nvim" }) -- Buffer Manager
+	use({ "moll/vim-bbye" }) -- Close Buffers
+	use({ "nvim-lualine/lualine.nvim" }) -- Status Line
+	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
+	use({ "ahmedkhalf/project.nvim" }) -- Project Picker
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
@@ -111,6 +111,16 @@ return packer.startup(function(use)
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
+	})
+
+	-- GPT
+	use({
+		"jackMort/ChatGPT.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim"
+		}
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
