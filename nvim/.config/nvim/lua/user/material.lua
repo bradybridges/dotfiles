@@ -10,6 +10,13 @@ material.setup({
 		CursorLine = { bg = "none" },
 		Cursor = { bg = "#84ffff" },
 		TreesitterContextLineNumber = { fg = "#84ffff" },
+		TelescopeResultsTitle = { fg = "#84ffff" },
+		TelescopePreviewTitle = { fg = "#84ffff" },
+		TelescopePromptTitle = { fg = "#84ffff" },
+		TelescopePromptBorder = { fg = "#84ffff" },
+		TelescopeMatching = { fg = "#84ffff" },
+		TelescopePromptNormal = { fg = "#ffffff" },
+
 	},
 	plugins = { -- Uncomment the plugins that you use to highlight them
 		"gitsigns",
