@@ -40,27 +40,27 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
-	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-	use({ "numToStr/Comment.nvim" }) -- Comments
+	use({ "wbthomason/packer.nvim" })    -- Have packer manage itself
+	use({ "nvim-lua/plenary.nvim" })     -- Useful lua functions used by lots of plugins
+	use({ "windwp/nvim-autopairs" })     -- Autopairs, integrates with both cmp and treesitter
+	use({ "numToStr/Comment.nvim" })     -- Comments
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "kyazdani42/nvim-web-devicons" }) -- Dev Icons
 	use({ "kyazdani42/nvim-tree.lua" })
-	use({ "akinsho/bufferline.nvim" }) -- Buffer Manager
-	use({ "moll/vim-bbye" }) -- Close Buffers
+	use({ "akinsho/bufferline.nvim" })   -- Buffer Manager
+	use({ "moll/vim-bbye" })             -- Close Buffers
 	use({ "nvim-lualine/lualine.nvim" }) -- Status Line
-	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	use({ "ahmedkhalf/project.nvim" }) -- Project Picker
+	use({ "akinsho/toggleterm.nvim" })   -- Floating Terminal
+	use({ "ahmedkhalf/project.nvim" })   -- Project Picker
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "folke/which-key.nvim" })
-	use({ "folke/zen-mode.nvim" })      -- Focus on window
+	use({ "folke/zen-mode.nvim" })          -- Focus on window
 	use({ "windwp/nvim-ts-autotag" })
 	use({ "phaazon/hop.nvim", branch = "v2" }) -- Move anywhere in buffer
-	use({ "xiyaowong/nvim-transparent" }) -- Toggle nvim transparency
-	use({ "norcalli/nvim-colorizer.lua" }) -- Colorize hex & colors
+	use({ "xiyaowong/nvim-transparent" })   -- Toggle nvim transparency
+	use({ "norcalli/nvim-colorizer.lua" })  -- Colorize hex & colors
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
@@ -69,23 +69,23 @@ return packer.startup(function(use)
 	use({ "marko-cerovac/material.nvim" })
 
 	-- Cmp
-	use({ "hrsh7th/nvim-cmp" })  -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" })  -- path completions
+	use({ "hrsh7th/nvim-cmp" })      -- The completion plugin
+	use({ "hrsh7th/cmp-buffer" })    -- buffer completions
+	use({ "hrsh7th/cmp-path" })      -- path completions
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
 
 	-- Snippets
-	use({ "L3MON4D3/LuaSnip" })      --snippet engine
+	use({ "L3MON4D3/LuaSnip" })          --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig" })    -- enable LSP
-	use({ "williamboman/mason.nvim" })  -- simple to use language server installer
+	use({ "neovim/nvim-lspconfig" })        -- enable LSP
+	use({ "williamboman/mason.nvim" })      -- simple to use language server installer
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
-	use({ "RRethy/vim-illuminate" })    -- Hightlight instances
+	use({ "RRethy/vim-illuminate" })        -- Hightlight instances
 	use({ "akinsho/flutter-tools.nvim" })
 
 	-- Telescope
@@ -111,6 +111,15 @@ return packer.startup(function(use)
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
+	})
+
+	-- Noice
+	use({
+		"folke/noice.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			--[[ "rcarriga/nvim-notify", ]] -- Enable if notifications is enabled
+		}
 	})
 
 	-- GPT
