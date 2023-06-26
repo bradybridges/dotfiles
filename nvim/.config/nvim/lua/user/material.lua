@@ -18,6 +18,7 @@ material.setup({
 		TelescopeMatching = { fg = "#c3e88d" },
 		TelescopePromptNormal = { fg = "#ffffff" },
 		HarpoonBorder = { fg = "#c3e88d" },
+		NoiceCmdlinePopupBorder = { fg = "#c3e88d" },
 	},
 	plugins = { -- Uncomment the plugins that you use to highlight them
 		"gitsigns",
