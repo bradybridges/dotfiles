@@ -118,7 +118,7 @@ return packer.startup(function(use)
 		"folke/noice.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
-			--[[ "rcarriga/nvim-notify", ]] -- Enable if notifications is enabled
+			"rcarriga/nvim-notify", -- Enable if notifications is enabled
 		}
 	})
 
