@@ -58,7 +58,7 @@ lualine.setup({
 		},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, "encoding", "filetype" },
-		lualine_y = { "location" },
+		lualine_y = { "location", "searchcount" },
 		lualine_z = { "progress" },
 	},
 	inactive_sections = {
