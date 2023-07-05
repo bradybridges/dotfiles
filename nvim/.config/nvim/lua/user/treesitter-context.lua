@@ -4,4 +4,6 @@ if not status then
 	return
 end
 
-context.setup({})
+context.setup({
+	enable = false,
+})
