@@ -79,6 +79,7 @@ local opts = {
 }
 
 local mappings = {
+	["<space>"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
