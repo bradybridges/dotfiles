@@ -161,6 +161,7 @@ local plugins = {
 				H = { "<cmd>nohl<cr>", "Clear Highlights" },
 				b = {
 					name = "Buffer",
+					c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 					t = {
 						name = "To ->",
 						h = { "<C-w>t<C-w>K", "Horiz" },
@@ -196,6 +197,26 @@ local plugins = {
 						"Diff",
 					},
 					t = { "<cmd>GitBlameToggle<cr>", "Toggle Git Blame" },
+				},
+				h = {
+					name ="Harpoon",
+					a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
+					m = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle Menu" },
+					n = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next Mark" },
+					p = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Previous Mark" },
+				},
+				j = {
+					name = "Hop",
+					a = { "<cmd>HopChar2<cr>", "Hop Anywhere" },
+					b = {
+						"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>",
+						"Hop Backwards On Line",
+					},
+					f = {
+						"<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>",
+						"Hop Forward On Line",
+					},
+					s = { "<cmd>HopLineStart<cr>", "Hop Line Start" },
 				},
 				t = {
 					name = "Terminal",
@@ -377,7 +398,6 @@ local plugins = {
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-telescope/telescope-file-browser.nvim",
-			"ThePrimeagen/harpoon",
 		},
 		config = function()
 			local status_ok, telescope = pcall(require, "telescope")
@@ -514,6 +534,11 @@ local plugins = {
 		end
 	},
 	{
+		"ThePrimeagen/harpoon",
+		lazy = true,
+		opts = {},
+	},
+	{
 		"ahmedkhalf/project.nvim",
 		event = "VeryLazy",
 		config = function()
@@ -545,6 +570,7 @@ local plugins = {
 	},
 	{
 		"folke/zen-mode.nvim",
+		event = "VeryLazy",
 		opts = {
 			window = {
 				width = .75,
@@ -552,46 +578,121 @@ local plugins = {
 			},
 		},
 	},
+	{
+		"moll/vim-bbye",
+		lazy = true,
+		opts = {},
+	},
+	{
+		"phaazon/hop.nvim",
+		event = "VeryLazy",
+		opts = {
+			keys = "etovxqpdygfblzhckisuran",
+		},
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = "VeryLazy",
+		config = function()
+			local status_ok, indent_blankline = pcall(require, "indent_blankline")
+			if not status_ok then
+				return
+			end
+
+			vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
+			vim.g.indent_blankline_filetype_exclude = {
+				"help",
+				"startify",
+				"dashboard",
+				"packer",
+				"neogitstatus",
+				"NvimTree",
+				"Trouble",
+			}
+			vim.g.indentLine_enabled = 1
+			-- vim.g.indent_blankline_char = "│"
+			vim.g.indent_blankline_char = "▏"
+			-- vim.g.indent_blankline_char = "▎"
+			vim.g.indent_blankline_show_trailing_blankline_indent = false
+			vim.g.indent_blankline_show_first_indent_level = true
+			vim.g.indent_blankline_use_treesitter = true
+			vim.g.indent_blankline_show_current_context = true
+			vim.g.indent_blankline_context_patterns = {
+				"class",
+				"return",
+				"function",
+				"method",
+				"^if",
+				"^while",
+				"jsx_element",
+				"^for",
+				"^object",
+				"^table",
+				"block",
+				"arguments",
+				"if_statement",
+				"else_clause",
+				"jsx_element",
+				"jsx_self_closing_element",
+				"try_statement",
+				"catch_clause",
+				"import_statement",
+				"operation_type",
+			}
+			-- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
+			vim.wo.colorcolumn = "99999"
+
+			indent_blankline.setup({
+				show_current_context = true,
+			})
+		end,
+	},
 	-- Themes
 	{ "folke/tokyonight.nvim", lazy = true },
 	{ "lunarvim/darkplus.nvim", lazy = true },
 	{ "ellisonleao/gruvbox.nvim", lazy = true },
 	{
 		"marko-cerovac/material.nvim",
-		lazy = false,
-		opts = {
-			custom_highlights = {
-				Comment = { fg = "#999999" },
-				CursorLine = { bg = "none" },
-				Cursor = { bg = "#84ffff" },
-				TreesitterContextLineNumber = { fg = "#84ffff" },
-				TelescopeNormal = { fg = "#666e8a", bg = "#0f111a" },
-				TelescopeResultsTitle = { fg = "#ffffff" },
-				TelescopePreviewTitle = { fg = "#ffffff" },
-				TelescopePromptTitle = { fg = "#ffffff" },
-				TelescopePromptBorder = { fg = "#c3e88d" },
-				TelescopeMatching = { fg = "#c3e88d" },
-				TelescopePromptNormal = { fg = "#ffffff" },
-				HarpoonBorder = { fg = "#c3e88d" },
-				NoiceCmdlinePopupBorder = { fg = "#c3e88d" },
-			},
-			plugins = {
-				"gitsigns",
-				"hop",
-				"indent-blankline",
-				"nvim-cmp",
-				"nvim-tree",
-				"nvim-web-devicons",
-				"telescope",
-				"which-key",
-			},
-			disable = {
-				background = false,
-			},
-			lualine_style = "stealth",
-		},
+		config = function()
+		end,
 		priority = 1000,
 		config = function()
+			local status, material = pcall(require, 'material')
+
+			if not status then return end
+
+			material.setup({
+				custom_highlights = {
+					Comment = { fg = "#999999" },
+					CursorLine = { bg = "none" },
+					Cursor = { bg = "#84ffff" },
+					TreesitterContextLineNumber = { fg = "#84ffff" },
+					TelescopeNormal = { fg = "#666e8a", bg = "#0f111a" },
+					TelescopeResultsTitle = { fg = "#ffffff" },
+					TelescopePreviewTitle = { fg = "#ffffff" },
+					TelescopePromptTitle = { fg = "#ffffff" },
+					TelescopePromptBorder = { fg = "#c3e88d" },
+					TelescopeMatching = { fg = "#c3e88d" },
+					TelescopePromptNormal = { fg = "#ffffff" },
+					HarpoonBorder = { fg = "#c3e88d" },
+					NoiceCmdlinePopupBorder = { fg = "#c3e88d" },
+				},
+				plugins = {
+					"gitsigns",
+					"hop",
+					"indent-blankline",
+					"nvim-cmp",
+					"nvim-tree",
+					"nvim-web-devicons",
+					"telescope",
+					"which-key",
+				},
+				disable = {
+					background = false,
+				},
+				lualine_style = "stealth",
+			})
+
 			vim.g.material_style = "deep ocean"
 			vim.cmd([[colorscheme material]])
 		end,
