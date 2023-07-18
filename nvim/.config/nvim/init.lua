@@ -1,3 +1,4 @@
-require("settings.options")
-require("settings.keymaps")
-require("settings.plugins")
+require("core.options")
+require("core.autocmds")
+require("keymaps")
+require("plugins")
