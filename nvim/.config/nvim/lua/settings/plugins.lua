@@ -231,6 +231,7 @@ local plugins = {
 					h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 					v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 				},
+				x = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 				z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
 			}
 
@@ -580,8 +581,9 @@ local plugins = {
 	},
 	{
 		"moll/vim-bbye",
-		lazy = true,
-		opts = {},
+		event = "VeryLazy",
+		config = function()
+		end,
 	},
 	{
 		"phaazon/hop.nvim",
@@ -644,6 +646,220 @@ local plugins = {
 
 			indent_blankline.setup({
 				show_current_context = true,
+			})
+		end,
+	},
+	{
+		"akinsho/bufferline.nvim",
+		event = "VeryLazy",
+		opts = {
+			options = {
+				numbers = "none",              -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+				close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+				right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+				left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+				middle_mouse_command = nil,    -- can be a string | function, see "Mouse actions"
+				-- NOTE: this plugin is designed with this icon in mind,
+				-- and so changing this is NOT recommended, this is intended
+				-- as an escape hatch for people who cannot bear it for whatever reason
+				indicator_icon = nil,
+				indicator = { style = "icon", icon = "▎" },
+				buffer_close_icon = "",
+				-- buffer_close_icon = '',
+				modified_icon = "●",
+				close_icon = "",
+				-- close_icon = '',
+				left_trunc_marker = "",
+				right_trunc_marker = "",
+				max_name_length = 30,
+				max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+				tab_size = 21,
+				diagnostics = false, -- | "nvim_lsp" | "coc",
+				diagnostics_update_in_insert = false,
+				offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+				show_buffer_icons = true,
+				show_buffer_close_icons = false,
+				show_close_icon = false,
+				show_tab_indicators = true,
+				persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+				separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+				enforce_regular_tabs = true,
+				always_show_bufferline = false,
+			},
+			highlights = {
+				fill = {
+					--[[ NOTE: This causes an error on nvim 0.9, look into it ]]
+					--[[ fg = { attribute = "fg", highlight = "#ff0000" }, ]]
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				background = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				--[[ buffer_selected = { ]]
+				--[[ 	fg = { attribute = 'fg', highlight = '#ff0000' }, ]]
+				--[[ 	bg = { attribute = 'bg', highlight = '#0000ff' }, ]]
+				--[[ 	gui = 'none' ]]
+				--[[ }, ]]
+				buffer_visible = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				close_button = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				close_button_visible = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				-- close_button_selected = {
+				--   fg = {attribute='fg',highlight='TabLineSel'},
+				--   bg ={attribute='bg',highlight='TabLineSel'}
+				--   },
+
+				tab_selected = {
+					fg = { attribute = "fg", highlight = "Normal" },
+					bg = { attribute = "bg", highlight = "Normal" },
+				},
+				tab = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				tab_close = {
+					-- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
+					fg = { attribute = "fg", highlight = "TabLineSel" },
+					bg = { attribute = "bg", highlight = "Normal" },
+				},
+				duplicate_selected = {
+					fg = { attribute = "fg", highlight = "TabLineSel" },
+					bg = { attribute = "bg", highlight = "TabLineSel" },
+					underline = true,
+				},
+				duplicate_visible = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+					underline = true,
+				},
+				duplicate = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+					underline = true,
+				},
+				modified = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				modified_selected = {
+					fg = { attribute = "fg", highlight = "Normal" },
+					bg = { attribute = "bg", highlight = "Normal" },
+				},
+				modified_visible = {
+					fg = { attribute = "fg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				separator = {
+					fg = { attribute = "bg", highlight = "TabLine" },
+					bg = { attribute = "bg", highlight = "TabLine" },
+				},
+				separator_selected = {
+					fg = { attribute = "bg", highlight = "Normal" },
+					bg = { attribute = "bg", highlight = "Normal" },
+				},
+				-- separator_visible = {
+				--   fg = {attribute='bg',highlight='TabLine'},
+				--   bg = {attribute='bg',highlight='TabLine'}
+				--   },
+				indicator_selected = {
+					fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
+					bg = { attribute = "bg", highlight = "Normal" },
+				},
+			},
+		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		config = function()
+			local status_ok, lualine = pcall(require, "lualine")
+			if not status_ok then
+				return
+			end
+
+			local hide_in_width = function()
+				return vim.fn.winwidth(0) > 80
+			end
+
+			local diagnostics = {
+				"diagnostics",
+				sources = { "nvim_diagnostic" },
+				sections = { "error", "warn" },
+				symbols = { error = " ", warn = " " },
+				colored = true,
+				update_in_insert = false,
+				always_visible = false,
+			}
+
+			local diff = {
+				"diff",
+				colored = true,
+				symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+				-- cond = hide_in_width
+			}
+
+			local mode = {
+				"mode",
+				fmt = function(str)
+					return "-- " .. str .. " --"
+				end,
+			}
+
+			local branch = {
+				"branch",
+				icons_enabled = true,
+				icon = "",
+			}
+
+			lualine.setup({
+				options = {
+					icons_enabled = true,
+					theme = "auto",
+					component_separators = { left = "|", right = "|" },
+					section_separators = { left = "", right = "" },
+					disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+					always_divide_middle = true,
+				},
+				sections = {
+					lualine_a = { branch, diagnostics },
+					lualine_b = { mode },
+					lualine_c = {
+						{
+							"filename",
+							file_status = true, -- displays file status (readonly status, modified status)
+							path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+						},
+					},
+					-- lualine_x = { "encoding", "fileformat", "filetype" },
+					lualine_x = { diff, "encoding", "filetype" },
+					lualine_y = { "location", "searchcount" },
+					lualine_z = { "progress" },
+				},
+				inactive_sections = {
+					lualine_a = {},
+					lualine_b = {},
+					lualine_c = {
+						{
+							"filename",
+							file_status = true, -- displays file status (readonly status, modified status)
+							path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+						},
+					},
+					lualine_x = {},
+					lualine_y = { "searchcount" },
+					lualine_z = { "hostname" },
+				},
+				tabline = {},
+				extensions = {},
 			})
 		end,
 	},
