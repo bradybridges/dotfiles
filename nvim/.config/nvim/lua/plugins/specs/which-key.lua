@@ -109,8 +109,8 @@ return {
 				},
 			},
 			e = { "<cmd>NvimTreeToggle<cr>" , "Toggle File Tree" },
-			f = {
-				name = "Find / Search",
+			s = {
+				name = "Search",
 				f = { "<cmd>Telescope find_files<cr>", "Find Files" },
 				g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
