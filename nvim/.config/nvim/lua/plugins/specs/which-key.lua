@@ -101,6 +101,10 @@ return {
 			b = {
 				name = "Buffer",
 				c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+				C = { "<cmd>BufferLinePickClose<cr>", "Pick Close Buffer" },
+				D = { "<Cmd>BufferLineGroupClose ungrouped<CR>", "Delete non-pinned buffers" },
+				p = { "<Cmd>BufferLineTogglePin<CR>", "Toggle Pin" },
+				P = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
 				s = { "<cmd>w<cr>", "Save" },
 				t = {
 					name = "To ->",
@@ -177,6 +181,7 @@ return {
 				q = { "<cmd>q<cr>", "Quit" },
 				Q = { "<cmd>qa!<cr>", "Force Quit All" },
 				s = { "<cmd>wa<cr>" , "Save All" },
+				t = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
 			},
 			x = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 			z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
