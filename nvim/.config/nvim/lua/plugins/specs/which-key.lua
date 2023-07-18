@@ -105,6 +105,7 @@ return {
 				D = { "<Cmd>BufferLineGroupClose ungrouped<CR>", "Delete non-pinned buffers" },
 				p = { "<Cmd>BufferLineTogglePin<CR>", "Toggle Pin" },
 				P = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+				R = { "<cmd>edit!<cr>", "Reload File" },
 				s = { "<cmd>w<cr>", "Save" },
 				t = {
 					name = "To ->",
