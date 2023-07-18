@@ -101,6 +101,7 @@ return {
 			b = {
 				name = "Buffer",
 				c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+				s = { "<cmd>w<cr>", "Save" },
 				t = {
 					name = "To ->",
 					h = { "<C-w>t<C-w>K", "Horiz" },
@@ -170,6 +171,12 @@ return {
 				f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 				h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 				v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+			},
+			w = {
+				name = "Window",
+				q = { "<cmd>q<cr>", "Quit" },
+				Q = { "<cmd>qa!<cr>", "Force Quit All" },
+				s = { "<cmd>wa<cr>" , "Save All" },
 			},
 			x = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 			z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
