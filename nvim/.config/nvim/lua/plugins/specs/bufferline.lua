@@ -5,7 +5,7 @@ return {
 		options = {
 			buffer_close_icon = "",
 			modified_icon = "●",
-			close_icon = '',
+			close_icon = "",
 			left_trunc_marker = "",
 			right_trunc_marker = "",
 			max_name_length = 30,
@@ -15,12 +15,6 @@ return {
 			left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = false,
-			diagnostics_indicator = function(_, _, diag)
-				local icons = require("lazyvim.config").icons.diagnostics
-				local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-				.. (diag.warning and icons.Warn .. diag.warning or "")
-				return vim.trim(ret)
-			end,
 			offsets = {
 				{
 					filetype = "NvimTree",
