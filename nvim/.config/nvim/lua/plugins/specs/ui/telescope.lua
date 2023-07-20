@@ -93,7 +93,7 @@ return {
 			},
 			pickers = {
 				find_files = {
-					hidden = true,
+					hidden = false,
 					no_ignore = false,
 				},
 			},
@@ -136,5 +136,5 @@ return {
 		end)
 
 		telescope.load_extension("file_browser")
-	end
+	end,
 }
