@@ -30,7 +30,7 @@ return {
 		},
 		ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 		highlight = {
-			enable = true, -- false will disable the whole extension
+			enable = true,       -- false will disable the whole extension
 			disable = { "css" }, -- list of language that will be disabled
 		},
 		autopairs = {
@@ -50,19 +50,19 @@ return {
 				node_decremental = "<bs>",
 			},
 		},
-		config = function(_, opts)
-			if type(opts.ensure_installed) == "table" then
-				---@type table<string, boolean>
-				local added = {}
-				opts.ensure_installed = vim.tbl_filter(function(lang)
-					if added[lang] then
-						return false
-					end
-					added[lang] = true
-					return true
-				end, opts.ensure_installed)
-			end
-			require("nvim-treesitter.configs").setup(opts)
-		end,
 	},
+	config = function(_, opts)
+		if type(opts.ensure_installed) == "table" then
+			---@type table<string, boolean>
+			local added = {}
+			opts.ensure_installed = vim.tbl_filter(function(lang)
+				if added[lang] then
+					return false
+				end
+				added[lang] = true
+				return true
+			end, opts.ensure_installed)
+		end
+		require("nvim-treesitter.configs").setup(opts)
+	end,
 }
