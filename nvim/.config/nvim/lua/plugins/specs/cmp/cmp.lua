@@ -1,6 +1,5 @@
 return {
 	"hrsh7th/nvim-cmp",
-	version = false, -- last release is way too old
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -36,6 +35,7 @@ return {
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
+				{ name = "nvim_lua" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
