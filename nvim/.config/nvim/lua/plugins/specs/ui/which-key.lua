@@ -126,6 +126,7 @@ return {
 				h = { "<cmd>Telescope highlights<cr>", "Highlights" },
 				o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
+				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)"}
 			},
 			g = {
 				name = "Git",
@@ -224,6 +225,7 @@ return {
 				t = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
 			},
 			x = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+			X = { "<cmd>lua require('noice').cmd('dismiss')<cr>", "Clear notifications" },
 			z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
 		}
 
