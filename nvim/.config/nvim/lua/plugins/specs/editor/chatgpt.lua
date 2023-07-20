@@ -5,6 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
 	},
+	cmd = "ChatGPT",
 	config = function()
 		local status_ok, gpt = pcall(require, "chatgpt")
 
