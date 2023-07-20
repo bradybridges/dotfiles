@@ -59,16 +59,16 @@ return {
 				zindex = 1000, -- positive value to position WhichKey above other floating windows.
 			},
 			layout = {
-				height = { min = 4, max = 25 }, -- min and max height of the columns
-				width = { min = 20, max = 50 }, -- min and max width of the columns
-				spacing = 3, -- spacing between columns
-				align = "left", -- align columns left, center or right
+				height = { min = 4, max = 25 },                                      -- min and max height of the columns
+				width = { min = 20, max = 50 },                                      -- min and max width of the columns
+				spacing = 3,                                                         -- spacing between columns
+				align = "left",                                                      -- align columns left, center or right
 			},
-			ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+			ignore_missing = false,                                                  -- enable this to hide mappings for which you didn't specify a label
 			hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "^:", "^ ", "^call ", "^lua " }, -- hide mapping boilerplate
-			show_help = true, -- show a help message in the command line for using WhichKey
-			show_keys = true, -- show the currently pressed key and its label as a message in the command line
-			triggers = "auto", -- automatically setup triggers
+			show_help = true,                                                        -- show a help message in the command line for using WhichKey
+			show_keys = true,                                                        -- show the currently pressed key and its label as a message in the command line
+			triggers = "auto",                                                       -- automatically setup triggers
 			-- triggers = {"<leader>"} -- or specifiy a list manually
 			-- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
 			triggers_nowait = {
@@ -118,6 +118,7 @@ return {
 			e = { "<cmd>NvimTreeToggle<cr>", "Toggle File Tree" },
 			s = {
 				name = "Search",
+				a = { "<cmd>ChatGPT<cr>", "ChatGPT" },
 				b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 				d = { "<cmd>Telesscope diagnostics<cr>", "Diagnostics" },
 				f = { "<cmd>Telescope find_files<cr>", "Find Files" },
