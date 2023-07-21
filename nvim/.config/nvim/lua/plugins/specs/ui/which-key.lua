@@ -204,6 +204,7 @@ return {
 					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 					"Workspace Symbols",
 				},
+				x = { "<cmd>LspStart<cr>", "Start LSP" },
 				X = { "<cmd>LspStop<cr>", "Stop LSP" },
 			},
 			M = { "<cmd>Mason<cr>", "Mason" },
