@@ -126,7 +126,7 @@ return {
 				h = { "<cmd>Telescope highlights<cr>", "Highlights" },
 				o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
-				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)"}
+				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)" }
 			},
 			g = {
 				name = "Git",
@@ -198,12 +198,15 @@ return {
 				l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 				q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 				r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+				R = { "<cmd>LspRestart<cr>", "Restart LSP" },
 				s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 				S = {
 					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 					"Workspace Symbols",
 				},
+				X = { "<cmd>LspStop<cr>", "Stop LSP" },
 			},
+			M = { "<cmd>Mason<cr>", "Mason" },
 			t = {
 				name = "Terminal",
 				n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
