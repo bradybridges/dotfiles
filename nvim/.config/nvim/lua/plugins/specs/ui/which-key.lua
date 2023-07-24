@@ -123,6 +123,7 @@ return {
 				d = { "<cmd>Telesscope diagnostics<cr>", "Diagnostics" },
 				f = { "<cmd>Telescope find_files<cr>", "Find Files" },
 				g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+				G = { "<cmd>Telescope git_files<cr>", "Git Files" },
 				h = { "<cmd>Telescope highlights<cr>", "Highlights" },
 				o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
