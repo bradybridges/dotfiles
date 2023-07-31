@@ -3,9 +3,11 @@ return {
 	priority = 1000,
 	name = "catppuccin",
 	config = function()
-		local status, catppuccin = pcall(require, 'catppuccin')
+		local status, catppuccin = pcall(require, "catppuccin")
 
-		if not status then return end
+		if not status then
+			return
+		end
 
 		catppuccin.setup({
 			name = "catppuccin",
@@ -43,6 +45,6 @@ return {
 			},
 		})
 
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme("catppuccin")
 	end,
 }
