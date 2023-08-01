@@ -6,6 +6,7 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			init = function() end,
 		},
+		{ "windwp/nvim-ts-autotag" },
 	},
 	opts = {
 		ensure_installed = {
@@ -34,6 +35,9 @@ return {
 			disable = { "css" }, -- list of language that will be disabled
 		},
 		autopairs = {
+			enable = true,
+		},
+		autotag = {
 			enable = true,
 		},
 		indent = { enable = true, disable = { "python", "css" } },
