@@ -105,8 +105,8 @@ return {
 				c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 				C = { "<cmd>BufferLinePickClose<cr>", "Pick Close Buffer" },
 				D = { "<Cmd>BufferLineGroupClose ungrouped<CR>", "Delete non-pinned buffers" },
-				p = { "<Cmd>BufferLineTogglePin<CR>", "Toggle Pin" },
-				P = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+				p = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+				P = { "<Cmd>BufferLineTogglePin<CR>", "Toggle Pin" },
 				R = { "<cmd>edit!<cr>", "Reload File" },
 				s = { "<cmd>w<cr>", "Save" },
 				t = {
@@ -127,7 +127,7 @@ return {
 				h = { "<cmd>Telescope highlights<cr>", "Highlights" },
 				o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
-				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)" }
+				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)" },
 			},
 			g = {
 				name = "Git",
