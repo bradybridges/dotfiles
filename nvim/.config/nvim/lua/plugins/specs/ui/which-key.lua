@@ -205,6 +205,7 @@ return {
 					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 					"Workspace Symbols",
 				},
+				u = { "<cmd>TSUpdate<cr>", "Update Lang Servers" },
 				x = { "<cmd>LspStart<cr>", "Start LSP" },
 				X = { "<cmd>LspStop<cr>", "Stop LSP" },
 			},
