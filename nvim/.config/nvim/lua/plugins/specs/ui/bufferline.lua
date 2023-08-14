@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "BufNewFile",
+	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		options = {
 			buffer_close_icon = "",
