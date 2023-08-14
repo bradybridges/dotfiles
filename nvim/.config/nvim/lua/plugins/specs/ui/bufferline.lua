@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "VeryLazy",
+	event = "BufNewFile",
 	opts = {
 		options = {
 			buffer_close_icon = "",
@@ -9,7 +9,7 @@ return {
 			left_trunc_marker = "",
 			right_trunc_marker = "",
 			max_name_length = 30,
-			max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+			max_prefix_length = 30,     -- prefix used when a buffer is de-duplicated
 			close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 			right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 			left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"

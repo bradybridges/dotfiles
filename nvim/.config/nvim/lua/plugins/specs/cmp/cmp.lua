@@ -9,11 +9,11 @@ return {
 		"hrsh7th/cmp-path",
 		{
 			"L3MON4D3/LuaSnip",
-			-- follow latest release.
-			version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-			-- install jsregexp (optional!).
-			build = "make install_jsregexp"
-		}
+			opts = {
+				history = true,
+				delete_check_events = "TextChanged",
+			},
+		},
 	},
 	config = function()
 		local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -149,5 +149,5 @@ return {
 				native_menu = false,
 			},
 		})
-	end
+	end,
 }

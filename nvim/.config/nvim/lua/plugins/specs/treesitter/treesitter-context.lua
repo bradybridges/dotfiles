@@ -3,4 +3,5 @@ return {
 	opts = {
 		enable = false,
 	},
+	lazy = true,
 }

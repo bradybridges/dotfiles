@@ -1,7 +1,7 @@
 return {
 	"numToStr/Comment.nvim",
-	opts = {
-	},
+	event = { "BufReadPre", "BufNewFile" },
+	opts = {},
 	dependencies = {
 		{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	},

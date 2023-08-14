@@ -1,12 +1,12 @@
 return {
 	"nvim-tree/nvim-tree.lua",
+	cmd = "NvimTreeToggle",
 	version = "*",
-	lazy = false,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		require("nvim-tree").setup {
+		require("nvim-tree").setup({
 			on_attach = on_attach,
 			disable_netrw = false,
 			hijack_netrw = true,
@@ -56,6 +56,6 @@ return {
 				width = 40,
 				side = "left",
 			},
-		}
+		})
 	end,
 }

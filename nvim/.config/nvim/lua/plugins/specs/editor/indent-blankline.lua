@@ -1,6 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	event = "BufRead",
+	event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		local status_ok, indent_blankline = pcall(require, "indent_blankline")
 		if not status_ok then

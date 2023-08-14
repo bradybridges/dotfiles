@@ -1,5 +1,4 @@
 return {
 	"nvim-lua/plenary.nvim",
-	lazy = false,
-	priority = 999,
+	lazy = true,
 }

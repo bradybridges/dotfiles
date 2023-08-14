@@ -1,9 +1,9 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	event = "VeryLazy",
 	dependencies = {
 		"nvim-telescope/telescope-file-browser.nvim",
 	},
+	cmd = "Telescope",
 	config = function()
 		local status_ok, telescope = pcall(require, "telescope")
 		if not status_ok then

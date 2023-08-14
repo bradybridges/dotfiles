@@ -1,5 +1,6 @@
 return {
 	"williamboman/mason.nvim",
+	cmd = "Mason",
 	config = function()
 		local servers = {
 			"lua_ls",

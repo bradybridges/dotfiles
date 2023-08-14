@@ -1,6 +1,5 @@
 return {
 	"moll/vim-bbye",
-	event = "VeryLazy",
-	config = function()
-	end,
+	event = { "BufReadPre", "BufNewFile" },
+	config = function() end,
 }
