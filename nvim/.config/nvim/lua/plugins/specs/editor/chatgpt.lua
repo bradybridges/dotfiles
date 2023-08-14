@@ -44,7 +44,7 @@ return {
 					},
 				},
 				keymaps = {
-					close = { "<C-c>" },
+					close = { "<C-c>", "<Esc>" },
 					yank_last = "<C-y>",
 					yank_last_code = "<C-k>",
 					scroll_up = "<C-u>",
