@@ -8,6 +8,13 @@ return {
 			init = function() end,
 		},
 		{ "windwp/nvim-ts-autotag" },
+		{
+			"nvim-treesitter/nvim-treesitter-context",
+			opts = {
+				enable = false,
+			},
+			lazy = true,
+		}
 	},
 	opts = {
 		ensure_installed = {
