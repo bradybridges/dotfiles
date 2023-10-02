@@ -17,7 +17,6 @@ return {
 		end
 
 		ibl.setup({
-			indent = { char = "|" },
 			exclude = {
 				filetypes = { "NvimTree" },
 			},
