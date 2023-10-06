@@ -8,7 +8,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/bradybridges/.oh-my-zsh"
-export TERM="xterm-256color"
+export TERM="screen-256color"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat="~/superCat.sh"
+alias lg="lazygit"
 alias gs="git status"
 alias gc="git commit"
 alias gd="git diff"
@@ -114,6 +115,8 @@ alias gl="git log"
 alias gco="git checkout"
 alias gp="git pull"
 alias gpo="git push origin HEAD"
+alias soft-reset="git reset --soft HEAD~1"
+alias restore="git restore --staged"
 alias cypress="npm run cypress"
 alias lighthouse="npm run build && npm run cypress"
 alias eth="curl rate.sx/eth@2w"
@@ -123,9 +126,12 @@ alias ../="cd .. && cd"
 alias ...="cd ../.."
 alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
 alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.controller.search.store' | pbcopy"
-alias snap="cd ~/projects/snap"
+alias snap="cd ~/projects/snap && clear"
 alias nrd="npm run dev"
 alias history="history | fzf"
+alias n="nvim"
+alias vim="nvim"
+alias ios="open -a simulator"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
@@ -144,9 +150,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval $(thefuck --alias)
-
-#alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
-
 #export brew path
 export PATH=/opt/homebrew/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_ALT_C_COMMAND="fd -t d . ~/projects/"
+
+export PATH=~/flutter/bin:$PATH
