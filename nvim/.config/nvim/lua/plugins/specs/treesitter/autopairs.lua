@@ -1,6 +1,7 @@
 return {
 	"windwp/nvim-autopairs",
 	event = "InsertEnter",
+	dependencies = "nvim-treesitter/nvim-treesitter",
 	config = function()
 		local status_ok, npairs = pcall(require, "nvim-autopairs")
 		if not status_ok then
