@@ -116,6 +116,12 @@ return {
 				},
 			},
 			e = { "<cmd>NvimTreeToggle<cr>", "Toggle File Tree" },
+			f = {
+				name = "Format(Split/Join) Item",
+				t = { "<cmd>TSJToggle<cr>", "Toggle" },
+				j = { "<cmd>TSJJoin<cr>", "Join" },
+				s = { "<cmd>TSJSplit<cr>", "Split" },
+			},
 			s = {
 				name = "Search",
 				a = { "<cmd>ChatGPT<cr>", "ChatGPT" },

@@ -7,10 +7,6 @@ return {
 			return
 		end
 
-		local hide_in_width = function()
-			return vim.fn.winwidth(0) > 80
-		end
-
 		local diagnostics = {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
@@ -25,7 +21,6 @@ return {
 			"diff",
 			colored = true,
 			symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-			-- cond = hide_in_width
 		}
 
 		local mode = {
@@ -44,7 +39,7 @@ return {
 		lualine.setup({
 			options = {
 				icons_enabled = true,
-				theme = "catppuccin",
+				--theme = "catppuccin",
 				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
