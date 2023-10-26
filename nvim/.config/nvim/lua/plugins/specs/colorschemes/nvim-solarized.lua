@@ -1,10 +1,8 @@
 return {
-	-- main colorscheme
-	-- solarized
 	{
 		"ishan9299/nvim-solarized-lua",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
+		lazy = true,
+		priority = 1000,
 		config = function()
 			vim.api.nvim_create_autocmd("ColorScheme", {
 				pattern = "solarized",
