@@ -48,6 +48,9 @@ alias history="history | fzf"
 alias n="nvim"
 alias vim="nvim"
 alias ios="open -a simulator"
+alias tmux-new="tmux new -s"
+alias tmux-kill="tmux kill-server"
+alias tmux-kill-session="tmux kill-session -t"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
