@@ -31,7 +31,7 @@ return {
 				loading_text = "Loading, please wait ...",
 				question_sign = "",
 				answer_sign = "ﮧ",
-				max_line_length = 120,
+				max_line_length = 500,
 				sessions_window = {
 					border = {
 						style = "rounded",
@@ -136,7 +136,7 @@ return {
 				model = "gpt-3.5-turbo",
 				frequency_penalty = 0,
 				presence_penalty = 0,
-				max_tokens = 300,
+				max_tokens = 500,
 				temperature = 0,
 				top_p = 1,
 				n = 1,
