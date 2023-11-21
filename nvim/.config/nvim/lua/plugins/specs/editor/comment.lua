@@ -3,7 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {},
 	dependencies = {
-		{ "JoosepAlviste/nvim-ts-context-commentstring" },
+		{ "JoosepAlviste/nvim-ts-context-commentstring", commit = "92e688f013c69f90c9bbd596019ec10235bc51de" },
 	},
 	config = function()
 		local status_ok, comment = pcall(require, "Comment")
