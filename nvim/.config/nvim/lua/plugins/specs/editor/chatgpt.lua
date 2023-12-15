@@ -1,5 +1,6 @@
 return {
 	"jackMort/ChatGPT.nvim",
+	commit = "f189c51d03316b4ab02766c5fed6f876f5d57cbb",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",
