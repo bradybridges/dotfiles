@@ -10,9 +10,6 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 
--- Trim Whitespace
--- keymap("n", "<Leader>T", TrimWhitespaces, opts)
-
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
