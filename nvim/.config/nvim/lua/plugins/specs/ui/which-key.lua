@@ -151,6 +151,8 @@ return {
 				o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
 				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)" },
+				q = { "<cmd>TodoQuickFix<cr>", "Show todos in quickfix" },
+				t = { "<cmd>TodoTelescope<cr>", "Show todos in telescope" }
 			},
 			g = {
 				name = "Git",
