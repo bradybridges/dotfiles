@@ -1,16 +1,7 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
--- Replace Trailing Whitespaces
-local function TrimWhitespaces()
-	local save = vim.fn.winsaveview()
-	vim.cmd("%s/\\\\\\@<!\\s\\+$//e")
-	vim.fn.winrestview(save)
-end
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -18,9 +9,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-
--- Trim Whitespace
--- keymap("n", "<Leader>T", TrimWhitespaces, opts)
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)

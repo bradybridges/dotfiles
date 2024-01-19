@@ -1,58 +1,54 @@
 return {
 	"williamboman/mason.nvim",
-	cmd = "Mason",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
 	config = function()
-		local servers = {
-			"lua_ls",
-			"cssls",
-			"html",
-			"tsserver",
-			"pyright",
-			-- "bashls",
-			"jsonls",
-			-- "yamlls",
-		}
+		-- import mason
+		local mason = require("mason")
 
-		local settings = {
+		-- import mason-lspconfig
+		local mason_lspconfig = require("mason-lspconfig")
+
+		local mason_tool_installer = require("mason-tool-installer")
+
+		-- enable mason and configure icons
+		mason.setup({
 			ui = {
-				border = "none",
 				icons = {
-					package_installed = "◍",
-					package_pending = "◍",
-					package_uninstalled = "◍",
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
 				},
 			},
-			log_level = vim.log.levels.INFO,
-			max_concurrent_installers = 4,
-		}
-
-		require("mason").setup(settings)
-		require("mason-lspconfig").setup({
-			ensure_installed = servers,
-			automatic_installation = true,
 		})
 
-		local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-		if not lspconfig_status_ok then
-			return
-		end
+		mason_lspconfig.setup({
+			-- list of servers for mason to install
+			ensure_installed = {
+				"tsserver",
+				"html",
+				"cssls",
+				"tailwindcss",
+				"lua_ls",
+				"emmet_ls",
+				"pyright",
+			},
+			-- auto-install configured servers (with lspconfig)
+			automatic_installation = true, -- not the same as ensure_installed
+		})
 
-		local opts = {}
-
-		for _, server in pairs(servers) do
-			opts = {
-				on_attach = require("utils.handlers").on_attach,
-				capabilities = require("utils.handlers").capabilities,
-			}
-
-			server = vim.split(server, "@")[1]
-
-			--[[ local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server) ]]
-			--[[ if require_ok then ]]
-			--[[ 	opts = vim.tbl_deep_extend("force", conf_opts, opts) ]]
-			--[[ end ]]
-
-			lspconfig[server].setup(opts)
-		end
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"prettier", -- prettier formatter
+				"stylua", -- lua formatter
+				"isort", -- python formatter
+				"black", -- python formatter
+				"pylint", -- python linter
+				"eslint_d", -- js linter
+			},
+		})
 	end,
 }
+

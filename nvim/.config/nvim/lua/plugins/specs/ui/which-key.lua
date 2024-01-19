@@ -151,6 +151,8 @@ return {
 				o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 				r = { "<cmd>Telescope resume<cr>", "Resume Telescope" },
 				s = { "<cmd>Telescope grep_string<cr>", "Search String(under cursor)" },
+				q = { "<cmd>TodoQuickFix<cr>", "Show todos in quickfix" },
+				t = { "<cmd>TodoTelescope<cr>", "Show todos in telescope" }
 			},
 			g = {
 				name = "Git",
@@ -198,7 +200,7 @@ return {
 			L = { "<cmd>Lazy<cr>", "Lazy" },
 			l = {
 				name = "LSP",
-				a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+				a = { "<cmd>lua vim.lsp.buf.code_action<cr>", "Code Action" },
 				c = { "<cmd>TSContextToggle<cr>", "Toggle TS Context" },
 				d = {
 					"<cmd>Telescope diagnostics bufnr=0<cr>",
@@ -228,6 +230,8 @@ return {
 					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 					"Workspace Symbols",
 				},
+
+				t = { "<cmd>Telescope lsp_type_definitions<cr>", "Show LSP type definitions" },
 				u = { "<cmd>TSUpdate<cr>", "Update Lang Servers" },
 				x = { "<cmd>LspStart<cr>", "Start LSP" },
 				X = { "<cmd>LspStop<cr>", "Stop LSP" },
