@@ -98,6 +98,8 @@ return {
 		}
 
 		local mappings = {
+			['`'] = { "<cmd>ToggleTerm direction=float<cr>", "Toggle F-term" },
+			['~'] = { "<cmd>ChatGPT<CR>", "Toggle ChatGPT" },
 			["<space>"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
 			H = { "<cmd>nohl<cr>", "Clear Highlights" },
 			b = {
