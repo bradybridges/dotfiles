@@ -27,8 +27,8 @@ keymap("n", "te", ":tabedit<CR>", opts)
 keymap("n", "tw", ":tabclose<CR>", opts)
 
 -- Next / Prev Tab
-keymap("n", "<Tab>", ":tabNext<cr>", opts)
-keymap("n", "<S-Tab>", ":tablast<cr>", opts)
+keymap("n", "<Tab>", ":tabnext<cr>", opts)
+keymap("n", "<S-Tab>", ":tabprevious<cr>", opts)
 
 -- Reload File
 keymap("n", "R", ":edit!<CR>", opts)
