@@ -21,7 +21,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-alias cat="~/superCat.sh"
+alias scat="~/superCat.sh"
 alias lg="lazygit"
 alias gs="git status"
 alias gc="git commit"
