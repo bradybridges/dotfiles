@@ -11,7 +11,7 @@ return {
 		{
 			"nvim-treesitter/nvim-treesitter-context",
 			opts = {
-				enable = false,
+				enable = true,
 			},
 			lazy = true,
 		}
