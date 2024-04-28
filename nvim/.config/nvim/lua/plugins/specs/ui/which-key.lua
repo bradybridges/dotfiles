@@ -145,6 +145,7 @@ return {
 				a = { "<cmd>ChatGPT<cr>", "ChatGPT" },
 				b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 				d = { "<cmd>Telesscope diagnostics<cr>", "Diagnostics" },
+				D = { "<cmd>Telescope lsp_definitions<CR>", 'Definition'},
 				f = { "<cmd>Telescope find_files<cr>", "Find Files" },
 				g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 				G = { "<cmd>Telescope live_grep hidden=true<cr>", "Live Grep Hidden Files" },
