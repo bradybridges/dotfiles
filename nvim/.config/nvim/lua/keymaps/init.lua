@@ -30,9 +30,6 @@ keymap("n", "tw", ":tabclose<CR>", opts)
 keymap("n", "<Tab>", ":tabnext<cr>", opts)
 keymap("n", "<S-Tab>", ":tabprevious<cr>", opts)
 
--- Reload File
-keymap("n", "R", ":edit!<CR>", opts)
-
 -- Tab File
 keymap("n", "<F9>", ":retab!<CR>", opts)
 
