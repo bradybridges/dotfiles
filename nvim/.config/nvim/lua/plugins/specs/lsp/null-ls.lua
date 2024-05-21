@@ -16,7 +16,7 @@ return {
 			debug = false,
 			sources = {
 				formatting.prettier.with({
-					extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--use-tabs" },
+					extra_args = { "--single-quote", "--jsx-single-quote", "--use-tabs" },
 				}),
 				formatting.black.with({ extra_args = { "--fast" } }),
 				formatting.stylua,
