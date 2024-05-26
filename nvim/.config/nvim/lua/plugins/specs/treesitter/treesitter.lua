@@ -7,7 +7,18 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			init = function() end,
 		},
-		{ "windwp/nvim-ts-autotag" },
+		{
+			"windwp/nvim-ts-autotag",
+			config = function()
+				local autotag_ok, autotag = pcall(require, 'nvim-ts-autotag')
+
+				if not autotag_ok then
+					return
+				end
+
+				autotag.setup()
+			end
+		},
 		{
 			"nvim-treesitter/nvim-treesitter-context",
 			opts = {
