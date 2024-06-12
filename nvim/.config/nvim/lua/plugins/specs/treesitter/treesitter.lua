@@ -76,5 +76,6 @@ return {
 			enable = true,
 		},
 		lazy = true,
+		cmd="TSContextToggle",
 	},
 }
