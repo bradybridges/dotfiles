@@ -7,7 +7,6 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup({
-			on_attach = on_attach,
 			disable_netrw = false,
 			hijack_netrw = true,
 			update_focused_file = {
