@@ -15,7 +15,7 @@ quiet=false
 # default theme
 loginbox=00000066
 loginshadow=00000000
-locktext="Enter Password"
+locktext="Enter Password..."
 font="FiraCode Nerd Font Mono"
 ringcolor=ffffffff
 insidecolor=00000000
@@ -25,7 +25,7 @@ insidevercolor=00000000
 ringwrongcolor=ffffffff
 insidewrongcolor=d23c3dff
 timecolor=ffffffff
-time_format="%H:%M:%S"
+time_format="%H:%M"
 greetercolor=ffffffff
 layoutcolor=ffffffff
 keyhlcolor=d23c3dff
