@@ -16,7 +16,7 @@ smart_gaps on
 set $mod Mod4
 
 # Autotiling
-exec_always autotiling --limit 3
+exec_always autotiling
 
 # Polybar
 exec_always --no-startup-id killall polybar
