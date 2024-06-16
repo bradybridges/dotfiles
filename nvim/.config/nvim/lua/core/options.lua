@@ -65,3 +65,5 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.opt_local.relativenumber = false
 	end,
 })
+
+vim.g.terminal_emulator='alacritty'
