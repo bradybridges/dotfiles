@@ -79,6 +79,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
+# start firefix
+bindsym $mod+b exec firefox
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
