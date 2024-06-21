@@ -240,6 +240,7 @@ return {
 				X = { "<cmd>LspStop<cr>", "Stop LSP" },
 			},
 			M = { "<cmd>Mason<cr>", "Mason" },
+			S = { "<cmd>w<cr>", "Save Buffer" },
 			t = {
 				name = "Terminal",
 				n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
