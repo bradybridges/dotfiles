@@ -5,15 +5,23 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Variables
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/home/brady/.local/share/bob/nvim-bin:$PATH"
 
+# Path
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
+# Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Plugins
 plugins=(z git ssh-agent zsh-autosuggestions zsh-syntax-highlighting zsh-bat)
 
+# omz
 source $ZSH/oh-my-zsh.sh
 
+# Alias
 alias scat="~/superCat.sh"
 alias lg="lazygit"
 alias gs="git status"
@@ -45,12 +53,13 @@ alias tmux-new="tmux new -s"
 alias tmux-kill="tmux kill-server"
 alias tmux-kill-session="tmux kill-session -t"
 
+# Nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export FZF_ALT_C_COMMAND="fdfind -t directory . ~/Documents/projects/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -59,3 +68,6 @@ export FZF_ALT_C_COMMAND="fdfind -t directory . ~/Documents/projects/"
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Tmuxifier init
+eval "$(tmuxifier init -)"
