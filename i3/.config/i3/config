@@ -9,8 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 for_window [class="^.*"] border pixel 4
-gaps inner 10
-gaps outer 0
+gaps inner 12
+gaps outer 2
 smart_gaps on
 
 set $mod Mod4
