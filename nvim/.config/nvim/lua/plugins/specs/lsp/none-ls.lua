@@ -29,7 +29,7 @@ return {
 						"lua",
 					},
 				}),
-				require("none-ls.diagnostics.eslint_d"),
+				--[[ require("none-ls.diagnostics.eslint_d"), ]]
 			},
 		})
 	end,
