@@ -79,6 +79,12 @@ return {
 			ncdu:toggle()
 		end
 
+		local btop = Terminal:new({ cmd = "btop", hidden = true })
+
+		function _BTOP_TOGGLE()
+			btop:toggle()
+		end
+
 		local htop = Terminal:new({ cmd = "htop", hidden = true })
 
 		function _HTOP_TOGGLE()
