@@ -243,6 +243,7 @@ return {
 			S = { "<cmd>w<cr>", "Save Buffer" },
 			t = {
 				name = "Terminal",
+				b = { "<cmd>lua _BTOP_TOGGLE()<cr>", "Btop" },
 				n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 				u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 				t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
