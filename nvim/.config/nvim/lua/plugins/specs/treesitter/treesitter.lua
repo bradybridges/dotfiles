@@ -6,7 +6,6 @@ return {
 		opts = {
 			ensure_installed = {
 				"bash",
-				"c",
 				"html",
 				"javascript",
 				"json",
@@ -23,6 +22,8 @@ return {
 				"vim",
 				"vimdoc",
 				"yaml",
+				"rust",
+				"toml",
 			},
 			ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 			highlight = {
