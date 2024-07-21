@@ -20,8 +20,6 @@ return {
 			{ "<leader>`", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle F-term" },
 			{ "<leader>~", "<cmd>ChatGPT<CR>", desc = "Toggle ChatGPT" },
 			{ "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-			{ "<leader>e", "<cmd> NvimTreeToggle<cr>", desc = "Toggle Nvim Tree" },
-			{ "<leader>f", "<cmd>TSJToggle<cr>", desc = "Split Join" },
 			{ "<leader>H", "<cmd>nohl<cr>", desc = "Clear Search Highlights" },
 			{ "<leader>x", "<cmd>Bdelete!<CR>", desc = "Close Buffer" },
 			{ "<leader>X", "<cmd>lua require('noice').cmd('dismiss')<cr>", desc = "Clear notifications" },
@@ -39,6 +37,12 @@ return {
 			{ "<leader>bo", group = "Buffer Orientation To ->" },
 			{ "Rleader>boh", "<C-w>t<C-w>K", desc = "Horizontal Split" },
 			{ "Rleader>bov", "<C-w>t<C-w>H", desc = "Vertical Split" },
+
+			--[[ Nvim Tree ]]
+			{ "<leader>e", "<cmd> NvimTreeToggle<cr>", desc = "Toggle Nvim Tree" },
+
+			--[[ Split Join ]]
+			{ "<leader>f", "<cmd>TSJToggle<cr>", desc = "Split Join" },
 
 			--[[ Git ]]
 			{ "<leader>g", group = "Git" },
