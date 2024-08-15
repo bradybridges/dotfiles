@@ -16,7 +16,7 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins
-plugins=(z git ssh-agent zsh-autosuggestions zsh-syntax-highlighting zsh-bat)
+plugins=(z git zsh-autosuggestions zsh-syntax-highlighting zsh-bat)
 
 # omz
 source $ZSH/oh-my-zsh.sh
