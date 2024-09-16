@@ -130,6 +130,7 @@ return {
 
 			--[[ Terminal ]]
 			{ "<leader>t", group = "Terminal" },
+			{ "<leader>td", "<cmd>lua _TODO_TOGGLE()<CR>", desc = "Todo List" },
 			{ "<leader>tb", "<cmd>lua _BTOP_TOGGLE()<CR>", desc = "Btop" },
 			{ "<leader>tn", "<cmd>lua _NODE_TOGGLE()<CR>", desc = "Node" },
 			{ "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<CR>", desc = "NCDU" },
