@@ -96,5 +96,11 @@ return {
 		function _PYTHON_TOGGLE()
 			python:toggle()
 		end
+
+		local todo = Terminal:new({ cmd = 'todo', hidden = true })
+
+		function _TODO_TOGGLE()
+			todo:toggle()
+		end
 	end,
 }
