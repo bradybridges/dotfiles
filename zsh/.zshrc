@@ -45,6 +45,7 @@ alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'Searc
 alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.controller.search.store' | xclip -selection clipboard"
 alias snap="cd ~/Documents/projects/snap"
 alias snapscript="echo '<script src=\"bundle.js\" id=\"searchspring-context\"></script>' | xclip -selection clipboard"
+alias snaprecscript="echo '<script type=\"searchspring/personalized-recommendations\" profile=\"\"></script>' | xclip -selection clipboard"
 alias nrd="npm run dev"
 alias history="history | fzf | xclip -sel clip"
 alias n="nvim"
