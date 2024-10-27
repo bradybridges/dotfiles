@@ -13,7 +13,7 @@ if type brew &>/dev/null; then
 fi
 
 export ZSH="/Users/bradybridges/.oh-my-zsh"
-export TERM="screen-256color"
+export TERM="xterm-256color"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
