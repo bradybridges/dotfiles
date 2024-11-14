@@ -55,6 +55,8 @@ alias tmux-new="tmux new -s"
 alias tmux-kill="tmux kill-server"
 alias tmux-kill-session="tmux kill-session -t"
 alias no='nvim $(fzf -m --preview="cat {}")'
+alias enc="openssl enc -aes-256-cbc -in"
+alias dec="openssl enc -d -aes-256-cbc -in"
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
