@@ -149,6 +149,8 @@ return {
 			{ "<leader>wQ", "<cmd>qa!<CR>", desc = "Force Quit All" },
 			{ "<leader>ws", "<cmd>wa<CR>", desc = "Save All" },
 			{ "<leader>wt", "<cmd>TransparentToggle<CR>", desc = "Toggle Transparent" },
+			{ "<leader>wc", "<cmd>Copilot enable<cr>", desc = "Enable Copilot" },
+			{ "<leader>wC", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
 		})
 
 		wk.setup({
