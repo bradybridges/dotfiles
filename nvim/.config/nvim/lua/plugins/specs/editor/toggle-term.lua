@@ -102,5 +102,11 @@ return {
 		function _TODO_TOGGLE()
 			todo:toggle()
 		end
+
+		local yazi = Terminal:new({ cmd = 'yazi', hidden = true })
+
+		function _YAZI_TOGGLE()
+			yazi:toggle()
+		end
 	end,
 }
