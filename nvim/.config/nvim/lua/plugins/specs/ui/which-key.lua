@@ -142,6 +142,7 @@ return {
 			{ "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", desc = "Float" },
 			{ "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<CR>", desc = "Horizontal" },
 			{ "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<CR>", desc = "Vertical" },
+			{ "<leader>ty", "<cmd>lua _YAZI_TOGGLE()<CR>", desc = "Yazi" },
 
 			--[[ Window ]]
 			{ "<leader>w", group = "Window" },
