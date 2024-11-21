@@ -12,6 +12,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 
+# Default Editor
+export EDITOR=nvim
+
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
