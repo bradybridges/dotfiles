@@ -14,6 +14,7 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 # Default Editor
 export EDITOR=nvim
+export MANROFFOPT="-c"
 
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
