@@ -69,7 +69,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_ALT_C_COMMAND="fdfind -t directory . ~/Documents/projects/"
+export FZF_ALT_C_COMMAND="fdfind -t directory . ~"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
