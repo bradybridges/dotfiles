@@ -148,6 +148,7 @@ return {
 			{ "<leader>w", group = "Window" },
 			{ "<leader>wq", "<cmd>q<CR>", desc = "Quit" },
 			{ "<leader>wQ", "<cmd>qa!<CR>", desc = "Force Quit All" },
+			{ "<leader>wr", "<C-w>R", desc = "Rotate window/buffer" },
 			{ "<leader>ws", "<cmd>wa<CR>", desc = "Save All" },
 			{ "<leader>wt", "<cmd>TransparentToggle<CR>", desc = "Toggle Transparent" },
 			{ "<leader>wc", "<cmd>Copilot enable<cr>", desc = "Enable Copilot" },
