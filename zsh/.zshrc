@@ -77,6 +77,3 @@ export FZF_ALT_C_COMMAND="fdfind -t directory . ~"
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Tmuxifier init
-eval "$(tmuxifier init -)"
