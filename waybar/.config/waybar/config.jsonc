@@ -2,7 +2,7 @@
 	"position": "top",
 	"modules-left": [
 		"hyprland/workspaces",
-		// "custom/cava_mviz",
+		"custom/cava_mviz",
 		"hyprland/window"
 	],
 	"modules-center": [
