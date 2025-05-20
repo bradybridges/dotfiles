@@ -67,13 +67,18 @@ button:hover {
 #tray,
 #network,
 #mode,
-#scratchpad {
+#scratchpad,
+#custom-cava_mviz {
   margin-top: 4px;
   margin-bottom: 4px;
   margin-left: 8px;
   margin-right: 8px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+#custom-cava_mviz {
+	color: @pink;
 }
 
 #clock {
