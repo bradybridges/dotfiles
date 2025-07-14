@@ -16,6 +16,7 @@
 		"pulseaudio"
 	],
 	"clock": {
+		"interval": 1,
 		"format": "<span foreground='#f5c2e7'>   </span>{:%a %b %d %I:%M:%S}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
