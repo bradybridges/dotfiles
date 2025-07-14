@@ -45,11 +45,20 @@ alias c="clear"
 alias ..="cd .."
 alias ../="cd .. && cd"
 alias ...="cd ../.."
-alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | xclip -selection clipboard"
-alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.controller.search.store' | xclip -selection clipboard"
+alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | wl-copy"
+alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.controller.search.store' | wl-copy"
 alias snap="cd ~/Documents/projects/snap"
-alias snapscript="echo '<script src=\"bundle.js\" id=\"searchspring-context\"></script>' | xclip -selection clipboard"
-alias snaprecscript="echo '<script type=\"searchspring/personalized-recommendations\" profile=\"\"></script>' | xclip -selection clipboard"
+
+# x-clip
+# alias snapscript="echo '<script src=\"bundle.js\" id=\"searchspring-context\"></script>' | xclip -selection clipboard"
+# alias snaprecscript="echo '<script type=\"searchspring/personalized-recommendations\" profile=\"\"></script>' | xclip -selection clipboard"
+#alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | xclip -selection clipboard"
+#alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.controller.search.store' | xclip -selection clipboard"
+
+# wl-copy (wayland)
+alias snapscript="echo '<script src=\"bundle.js\" id=\"searchspring-context\"></script>' | wl-copy"
+alias snaprecscript="echo '<script type=\"searchspring/personalized-recommendations\" profile=\"\"></script>' | wl-copy"
+
 alias nrd="npm run dev"
 alias history="history | fzf | xclip -sel clip"
 alias n="nvim"
