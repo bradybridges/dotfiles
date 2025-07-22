@@ -1,5 +1,6 @@
 return {
 	"norcalli/nvim-colorizer.lua",
+	enabled = false,
 	config = function()
 		local colorizer_ok, colorizer = pcall(require, 'colorizer')
 
