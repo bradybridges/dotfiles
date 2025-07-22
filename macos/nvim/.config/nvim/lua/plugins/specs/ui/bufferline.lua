@@ -3,6 +3,8 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		options = {
+			show_close_icon = false,
+			show_buffer_close_icons = false,
 			buffer_close_icon = "",
 			modified_icon = "●",
 			close_icon = "",
