@@ -20,7 +20,7 @@ return {
 		},
 	},
 	keys = {
-		--[[ Quick Actions ]]
+		--Quick Actions
 		{
 			"<leader>?",
 			function()
@@ -38,9 +38,9 @@ return {
 			end,
 			desc = "Toggle Virtual Lines",
 		},
+		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename under cursor" },
 
-		--[[ Buffer ]]
-		--
+		-- Buffer
 		{ "<leader>bC", "<cmd>BufferLinePickClose<CR>", desc = "Pick Close Buffer" },
 		{ "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Pick Buffer" },
 		{ "<leader>bP", "<cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin Buffer" },
