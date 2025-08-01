@@ -13,6 +13,7 @@ return {
 		catppuccin.setup({
 			name = "catppuccin",
 			flavor = "mocha",
+			transparent_background = true,
 			integrations = {
 				blink_cmp = {
 					style = "bordered",
