@@ -24,9 +24,10 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # Display Resolution
 exec_always xrandr --output DP-0 --mode 5120x1440 --rate 120.00
+exec_always xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60.00
 
 # Wallpaper
-exec_always feh --bg-scale /home/brady/Pictures/wallpapers/5120x1440/snowy-forest.jpg
+exec_always feh --bg-scale /home/brady/Pictures/wallpapers/5120x1440/cattpuccin-patties.jpg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
