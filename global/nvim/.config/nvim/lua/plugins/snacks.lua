@@ -19,6 +19,7 @@ return {
 		},
 		picker = { enabled = true },
 		quickfile = { enabled = true },
+		scratch = { ft = 'markdown' },
 		scope = { enabled = true },
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
