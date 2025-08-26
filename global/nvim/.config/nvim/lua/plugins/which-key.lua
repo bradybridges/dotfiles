@@ -50,5 +50,14 @@ return {
 		{ "<leader>boh", "<C-w>t<C-w>K", desc = "Horizontal Split" },
 		{ "<leader>bov", "<C-w>t<C-w>H", desc = "Vertical Split" },
 		{ "<leader>bw", "<cmd>BufferLineGroupClose ungrouped<CR>", desc = "Close Un-Pinned Buffers" },
+
+		--[[ Window ]]
+		{ "<leader>w", group = "Window" },
+		{ "<leader>wq", "<cmd>q<CR>", desc = "Write/Quit" },
+		{ "<leader>wQ", "<cmd>qa!<CR>", desc = "Force Quit All" },
+		{ "<leader>wr", "<C-w>R", desc = "Rotate window/buffer" },
+		{ "<leader>ws", "<cmd>wa<CR>", desc = "Save All" },
+		{ "<leader>wc", "<cmd>Copilot enable<cr>", desc = "Enable Copilot" },
+		{ "<leader>wC", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
 	},
 }
