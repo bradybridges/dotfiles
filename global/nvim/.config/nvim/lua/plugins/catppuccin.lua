@@ -3,6 +3,14 @@ return {
 	lazy = false,
 	priority = 1000,
 	name = "catppuccin",
+	-- Temporariy fix for bufferline: https://github.com/LazyVim/LazyVim/issues/6355
+	opts = function(_, opts)
+		local module = require("catppuccin.groups.integrations.bufferline")
+		if module then
+			module.get = module.get_theme
+		end
+		return opts
+	end,
 	config = function()
 		local status, catppuccin = pcall(require, "catppuccin")
 
@@ -28,7 +36,7 @@ return {
 				lsp_trouble = false,
 				mason = true,
 				mini = {
-					enabled = true
+					enabled = true,
 				},
 				native_lsp = {
 					enabled = true,
