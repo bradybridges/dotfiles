@@ -4,7 +4,7 @@ return {
 	after = "catppuccin",
 	config = function()
 		require("bufferline").setup({
-			highlights = require("catppuccin.groups.integrations.bufferline").get(),
+			highlights = require("catppuccin.special.bufferline").get_theme(),
 			options = {
 				show_close_icon = false,
 				show_buffer_close_icons = false,
