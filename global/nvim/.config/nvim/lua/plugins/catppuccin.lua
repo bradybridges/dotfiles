@@ -18,6 +18,7 @@ return {
 				blink_cmp = {
 					style = "bordered",
 				},
+				bufferline = true,
 				alpha = false,
 				cmp = false,
 				gitsigns = false,
