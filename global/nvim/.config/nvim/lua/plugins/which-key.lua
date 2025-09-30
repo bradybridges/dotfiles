@@ -51,6 +51,15 @@ return {
 		{ "<leader>bov", "<C-w>t<C-w>H", desc = "Vertical Split" },
 		{ "<leader>bw", "<cmd>BufferLineGroupClose ungrouped<CR>", desc = "Close Un-Pinned Buffers" },
 
+		-- Diagnostics
+		{
+			"<leader>d",
+			function()
+				vim.diagnostic.open_float()
+			end,
+			desc = "Diagnostic Under Cursor",
+		},
+
 		--[[ Window ]]
 		{ "<leader>w", group = "Window" },
 		{ "<leader>wq", "<cmd>q<CR>", desc = "Write/Quit" },
