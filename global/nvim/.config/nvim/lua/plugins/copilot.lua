@@ -1,7 +1,7 @@
 return {
 	"github/copilot.vim",
 	cmd = "Copilot",
-	enabled = false,
+	enabled = true,
 	init = function()
 		vim.g.copilot_workspace_folders = "~/Projects/Work/"
 		vim.g.copilot_no_tab_map = true
