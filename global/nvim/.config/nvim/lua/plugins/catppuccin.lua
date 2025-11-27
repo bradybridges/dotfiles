@@ -14,6 +14,13 @@ return {
 			name = "catppuccin",
 			flavor = "mocha",
 			transparent_background = true,
+			highlight_overrides = {
+				mocha = function(mocha)
+					return {
+						LineNr = { fg = "#595b70" },
+					}
+				end,
+			},
 			integrations = {
 				blink_cmp = {
 					style = "bordered",
@@ -21,8 +28,8 @@ return {
 				bufferline = true,
 				alpha = false,
 				cmp = false,
-				gitsigns = false,
-				harpoon = true,
+				gitsigns = true,
+				harpoon = false,
 				hop = false,
 				illuminate = false,
 				indent_blankline = { enabled = false },
@@ -42,7 +49,7 @@ return {
 				},
 				navic = { enabled = false, custom_bg = "lualine" },
 				neotest = false,
-				noice = false,
+				noice = true,
 				notify = false,
 				neotree = false,
 				nvimtree = false,
