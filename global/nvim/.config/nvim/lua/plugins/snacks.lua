@@ -470,9 +470,16 @@ return {
 			"<leader>x",
 			function()
 				Snacks.bufdelete()
+			end,
+			desc = "Close Buffer",
+		},
+		{
+			"<leader>X",
+			function()
+				Snacks.bufdelete()
 				vim.api.nvim_command("q")
 			end,
-			desc = "Delete Buffer & Close Split",
+			desc = "Close Buffer & Split",
 		},
 		{
 			"<leader>bD",
