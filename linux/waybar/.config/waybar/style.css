@@ -8,11 +8,10 @@
 }
 
 window#waybar {
-    background-color: #11111b;
+    background-color: transparent;
     color: @overlay0;
     transition-property: background-color;
     transition-duration: 0.1s;
-    /* border-bottom: 1px solid @overlay1; */
 }
 
 #window {
@@ -40,8 +39,9 @@ button:hover {
 
 #workspaces button.focused {
     background-color: rgba(0, 0, 0, 0.3);
-    color: @rosewater;
+    color: @mauve;
     border-top: 2px solid @rosewater;
+	border-radius: 8px;
 }
 
 #workspaces button.active {
@@ -77,12 +77,7 @@ button:hover {
 }
 
 #custom-cava_mviz {
-	color: @pink;
-}
-
-#clock {
 	color: @mauve;
-	margin-top: 0;
 }
 
 #cpu, #memory, #pulseaudio {
@@ -95,11 +90,6 @@ button:hover {
     border-top: 2px solid @green;
 }
 
-#idle_inhibitor {
-    margin-right: 12px;
-    color: #7cb342;
-}
-
 #idle_inhibitor.activated {
     color: @red;
 }
@@ -109,19 +99,28 @@ button:hover {
     border-bottom: 2px solid @green;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
+.modules-left {
+	margin-left: 4px;
+	/* padding-left: 8px; */
+}
+.modules-right {
+	margin-right: 4px;
+	padding-right: 2px;
+}
+.modules-left, .modules-right, .modules-center {
+	background: @mantle;
+	margin-top: 4px;
+	border-radius: 8px;
+	border: solid 1px @rose;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
+#workspaces {
+	background: @mantle;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	margin-left: 2px;
 }
 
-#custom-vpn {
-    color: @lavender;
-    border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
+#clock {
+	color: @blue;
 }
