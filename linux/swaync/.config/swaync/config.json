@@ -1,0 +1,26 @@
+{
+	"widgets": [
+		"title",
+		"dnd",
+		"mpris",
+		"notifications"
+	],
+	"widget-config": {
+		"title": {
+			"text": "Notifications",
+			"clear-all-button": true,
+			"button-text": "Clear All"
+		},
+		"dnd": {
+			"text": "Do Not Disturb"
+		},
+		"label": {
+			"max-lines": 5,
+			"text": "Label Text"
+		},
+		"mpris": {
+			"image-size": 96,
+			"image-radius": 12
+		}
+	}
+}
