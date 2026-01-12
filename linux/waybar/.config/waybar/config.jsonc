@@ -65,6 +65,9 @@
 			"*": 5
 		}
 	},
+	"hyprland/window": {
+		"max-length": 50
+	},
 	"tray": {
 		"icon-size": 20,
 		"spacing": 16,
