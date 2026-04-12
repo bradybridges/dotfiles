@@ -13,7 +13,7 @@ if type brew &>/dev/null; then
 fi
 
 export ZSH="/Users/bradybridges/.oh-my-zsh"
-export TERM="xterm-256color"
+export TERM="screen-256color"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -68,3 +68,4 @@ export PATH=~/flutter/bin:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="$HOME/.local/bin:$PATH"
