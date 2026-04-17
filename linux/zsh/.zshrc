@@ -87,3 +87,5 @@ export FZF_ALT_C_COMMAND="fd -t directory . ~"
 #source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/nvm/init-nvm.sh
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/bin:$PATH"
