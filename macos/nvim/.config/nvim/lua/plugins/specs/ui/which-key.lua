@@ -12,7 +12,6 @@ return {
 		wk.add({
 			--[[ Quick Actions / Un-grouped ]]
 			{ "<leader>`", "<cmd>ToggleTerm direction=float<CR>", desc = "Toggle F-term" },
-			{ "<leader>~", "<cmd>ChatGPT<CR>", desc = "Toggle ChatGPT" },
 			{ "<leader><space>", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
 			{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Nvim Tree" },
 			{ "<leader>f", "<cmd>TSJToggle<CR>", desc = "Split Join" },
