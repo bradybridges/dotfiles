@@ -412,9 +412,14 @@ return {
 		{
 			"<leader>ss",
 			function()
-				Snacks.picker.lsp_symbols()
+				vim.lsp.buf.document_symbol({
+					on_list = function(options)
+						vim.fn.setloclist(0, {}, " ", { title = options.title, items = options.items })
+						Snacks.picker.loclist()
+					end,
+				})
 			end,
-			desc = "LSP Symbols",
+			desc = "Document Symbols",
 		},
 		{
 			"<leader>sS",
