@@ -12,6 +12,10 @@ if type brew &>/dev/null; then
 	compinit
 fi
 
+# Default Editor
+export EDITOR=nvim
+export MANROFFOPT="-c"
+
 export ZSH="/Users/bradybridges/.oh-my-zsh"
 export TERM="screen-256color"
 
