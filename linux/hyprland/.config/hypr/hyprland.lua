@@ -286,7 +286,7 @@ end)
 
 -- Session
 hl.bind("ALT + SHIFT + CTRL + E", hl.dsp.exit())
-hl.bind("ALT + SHIFT + CTRL + W", hl.dsp.exec_cmd("killall waybar || hyprctl dispatch exec waybar"))
+hl.bind("ALT + SHIFT + CTRL + W", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind("ALT + SHIFT + CTRL + S", hl.dsp.exec_cmd("sh -c 'hyprlock & sleep 1; systemctl suspend'"))
 
 -- Lock screen
