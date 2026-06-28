@@ -1,35 +1,7 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	branch="main",
-	build = ":TSUpdate",
-	lazy = false, -- main branch does not support lazy-loading
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-	},
+	"nvim-treesitter/nvim-treesitter-textobjects",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		-- Install parsers (no-op if already installed)
-		require("nvim-treesitter").install({
-			"bash",
-			"html",
-			"javascript",
-			"json",
-			"lua",
-			"luadoc",
-			"regex",
-			"vim",
-			"vimdoc",
-			"yaml",
-		})
-
-		-- Highlighting is a built-in Neovim feature in v0.12; must be enabled explicitly.
-		-- The old `highlight = { enable = true }` in configs.setup() no longer works.
-		vim.api.nvim_create_autocmd("FileType", {
-			callback = function()
-				pcall(vim.treesitter.start)
-			end,
-		})
-
-		-- Textobjects: new API uses setup() for options + explicit vim.keymap.set() for keymaps
 		require("nvim-treesitter-textobjects").setup({
 			select = {
 				lookahead = true,

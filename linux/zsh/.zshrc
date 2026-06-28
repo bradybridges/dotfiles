@@ -71,6 +71,29 @@ alias no='nvim $(fzf -m --preview="cat {}")'
 alias enc="openssl enc -aes-256-cbc -in"
 alias dec="openssl enc -d -aes-256-cbc -in"
 
+# Install or update a treesitter parser and its query files
+ts-install() {
+  local lang=$1
+  local repo=$2
+  local src_dir=$3  # optional subdir if grammar isn't at repo root
+
+  local tmp="/tmp/ts-$lang"
+  git clone --depth=1 "$repo" "$tmp"
+
+  local src="$tmp/${src_dir:-.}/src"
+  local args=(-o ~/.local/share/nvim/site/parser/$lang.so -shared -fPIC -Os -I"$src" "$src/parser.c")
+  [ -f "$src/scanner.c" ] && args+=("$src/scanner.c")
+  cc "${args[@]}"
+
+  local queries="$tmp/${src_dir:-.}/queries"
+  [ -d "$queries" ] || queries="$tmp/queries"
+  mkdir -p ~/.config/nvim/queries/$lang
+  cp "$queries"/*.scm ~/.config/nvim/queries/$lang/ 2>/dev/null
+
+  rm -rf "$tmp"
+  echo "Installed $lang parser and queries"
+}
+
 # Nvm
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,3 +1,11 @@
+-- Enable native treesitter highlighting for every filetype
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("native-treesitter-highlight", { clear = true }),
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
+})
+
 -- Highlight yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
