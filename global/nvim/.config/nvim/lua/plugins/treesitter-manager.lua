@@ -16,6 +16,7 @@ return {
 				'javascript',
 				'typescript',
 				'svelte',
+				'python',
 				'vimdoc',
 				'bash',
 				'json',
