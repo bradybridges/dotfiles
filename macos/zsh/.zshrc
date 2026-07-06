@@ -57,6 +57,29 @@ alias tmux-kill="tmux kill-server"
 alias tmux-kill-session="tmux kill-session -t"
 alias no='nvim $(fzf -m --preview="cat {}")'
 
+# Install or update a treesitter parser and its query files
+ts-install() {
+  local lang=$1
+  local repo=$2
+  local src_dir=$3  # optional subdir if grammar isn't at repo root
+
+  local tmp="/tmp/ts-$lang"
+  git clone --depth=1 "$repo" "$tmp"
+
+  local src="$tmp/${src_dir:-.}/src"
+  local args=(-o ~/.local/share/nvim/site/parser/$lang.so -shared -fPIC -Os -I"$src" "$src/parser.c")
+  [ -f "$src/scanner.c" ] && args+=("$src/scanner.c")
+  cc "${args[@]}"
+
+  local queries="$tmp/${src_dir:-.}/queries"
+  [ -d "$queries" ] || queries="$tmp/queries"
+  mkdir -p ~/.config/nvim/queries/$lang
+  cp "$queries"/*.scm ~/.config/nvim/queries/$lang/ 2>/dev/null
+
+  rm -rf "$tmp"
+  echo "Installed $lang parser and queries"
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -73,3 +96,4 @@ export PATH=~/flutter/bin:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/develop/flutter/bin:$PATH"
