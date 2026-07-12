@@ -284,6 +284,22 @@ hl.bind(mainMod .. " + T", function()
 	end
 end)
 
+-- Toggle hypridle
+hl.bind(
+	mainMod .. " + SHIFT + I",
+	hl.dsp.exec_cmd(
+		"sh -c 'if pgrep -x hypridle > /dev/null; then pkill -x hypridle; notify-send \"hypridle disabled\"; else hypridle & disown; notify-send \"hypridle enabled\"; fi'"
+	)
+)
+
+-- Toggle hyprsunset
+hl.bind(
+	mainMod .. " + SHIFT + O",
+	hl.dsp.exec_cmd(
+		"sh -c 'if pgrep -x hyprsunset > /dev/null; then pkill -x hyprsunset; notify-send \"hyprsunset disabled\"; else hyprsunset & disown; notify-send \"hyprsunset enabled\"; fi'"
+	)
+)
+
 -- Session
 hl.bind("ALT + SHIFT + CTRL + E", hl.dsp.exit())
 hl.bind("ALT + SHIFT + CTRL + W", hl.dsp.exec_cmd("killall waybar || waybar"))
