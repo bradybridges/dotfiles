@@ -20,3 +20,12 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename under cursor" })
+
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic Under Cursor" })
+
+vim.keymap.set("n", "<leader>uv", function()
+	local new_config = not vim.diagnostic.config().virtual_lines
+	vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = "Toggle Virtual Lines" })

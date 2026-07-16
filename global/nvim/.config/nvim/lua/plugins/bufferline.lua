@@ -2,6 +2,17 @@ return {
 	"akinsho/bufferline.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	after = "catppuccin",
+	keys = {
+		{ "<leader>bC", "<cmd>BufferLinePickClose<CR>", desc = "Pick Close Buffer" },
+		{ "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Pick Buffer" },
+		{ "<leader>bP", "<cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin Buffer" },
+		{ "<leader>bR", "<cmd>edit!<CR>", desc = "Reload Buffer" },
+		{ "<leader>bs", "<cmd>w<CR>", desc = "Save Buffer" },
+		{ "<leader>bo", group = "Buffer Orientation To ->" },
+		{ "<leader>boh", "<C-w>t<C-w>K", desc = "Horizontal Split" },
+		{ "<leader>bov", "<C-w>t<C-w>H", desc = "Vertical Split" },
+		{ "<leader>bw", "<cmd>BufferLineGroupClose ungrouped<CR>", desc = "Close Un-Pinned Buffers" },
+	},
 	config = function()
 		require("bufferline").setup({
 			highlights = require("catppuccin.special.bufferline").get_theme(),
@@ -26,8 +37,8 @@ return {
 				always_show_bufferline = false,
 				offsets = {
 					{
-						filetype = "NvimTree",
-						text = "Nvim Tree",
+						filetype = "oil",
+						text = "Oil",
 						highlight = "Directory",
 						text_align = "left",
 						padding = 1,
