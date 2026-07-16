@@ -31,6 +31,7 @@ return {
 				css = { "prettierd", "prettier", stop_after_first = true },
 				scss = { "prettierd", "prettier", stop_after_first = true },
 				svelte = { "prettierd", "prettier", stop_after_first = true },
+				astro = { "prettierd", "prettier", stop_after_first = true },
 			},
 		})
 	end,
