@@ -17,7 +17,6 @@ export EDITOR=nvim
 export MANROFFOPT="-c"
 
 export ZSH="/Users/bradybridges/.oh-my-zsh"
-export TERM="screen-256color"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
