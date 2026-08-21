@@ -1,0 +1,40 @@
+# Shared across linux/zsh and macos/zsh — sourced from each platform's .zshrc
+
+# Default Editor
+export EDITOR=nvim
+export MANROFFOPT="-c"
+
+# Alias
+alias lg="lazygit"
+alias gs="git status"
+alias gc="git commit"
+alias gd="git diff"
+alias gm="git merge"
+alias gl="git log"
+alias gco="git checkout"
+alias gp="git pull"
+alias gpo="git push origin HEAD"
+alias soft-reset="git reset --soft HEAD~1"
+alias restore="git restore --staged"
+alias cypress="npm run cypress"
+alias lighthouse="npm run build && npm run cypress"
+alias c="clear"
+alias ..="cd .."
+alias ../="cd .. && cd"
+alias ...="cd ../.."
+alias nrd="npm run dev"
+alias n="nvim"
+alias ios="open -a simulator"
+alias tmux-attach="tmux a -t"
+alias tmux-new="tmux new -s"
+alias tmux-kill="tmux kill-server"
+alias tmux-kill-session="tmux kill-session -t"
+alias no='nvim $(fzf -m --preview="cat {}")'
+
+# Fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="$HOME/.local/bin:$PATH"
