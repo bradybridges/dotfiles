@@ -12,12 +12,6 @@ if type brew &>/dev/null; then
 	compinit
 fi
 
-# Default Editor
-export EDITOR=nvim
-export MANROFFOPT="-c"
-
-source ~/.oh-my-zsh/oh-my-zsh.sh
-
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -26,35 +20,11 @@ plugins=(z git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-alias lg="lazygit"
-alias gs="git status"
-alias gc="git commit"
-alias gd="git diff"
-alias gm="git merge"
-alias gl="git log"
-alias gco="git checkout"
-alias gp="git pull"
-alias gpo="git push origin HEAD"
-alias soft-reset="git reset --soft HEAD~1"
-alias restore="git restore --staged"
-alias cypress="npm run cypress"
-alias lighthouse="npm run build && npm run cypress"
-alias c="clear"
-alias ..="cd .."
-alias ../="cd .. && cd"
-alias ...="cd ../.."
+# Alias (macos-only)
 alias scope="echo 'SearchSpring.Catalog.elems.container.scope()' &&  echo 'SearchSpring.Catalog.elems.container.scope()' | pbcopy"
 alias store="echo 'searchspring.controller.search.store' &&  echo 'searchspring.controller.search.store' | pbcopy"
 alias snap="cd ~/projects/snap && clear"
-alias nrd="npm run dev"
 alias history="history | fzf"
-alias n="nvim"
-alias ios="open -a simulator"
-alias tmux-attach="tmux a -t"
-alias tmux-new="tmux new -s"
-alias tmux-kill="tmux kill-server"
-alias tmux-kill-session="tmux kill-session -t"
-alias no='nvim $(fzf -m --preview="cat {}")'
 alias cat="bat"
 
 export NVM_DIR="$HOME/.nvm"
@@ -64,13 +34,10 @@ export NVM_DIR="$HOME/.nvm"
 #export brew path
 export PATH=/opt/homebrew/bin:$PATH
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export FZF_ALT_C_COMMAND="fd -t d . ~/projects/"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="$HOME/.local/bin:$PATH"
+# Shared config (aliases, fzf, p10k, PATH) — see global/zsh
+source ~/.zshrc_common
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

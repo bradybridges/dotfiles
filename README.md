@@ -9,7 +9,8 @@ Configs are split by platform with a shared `global` directory for cross-platfor
 ```
 dotfiles/
 ├── global/          # Cross-platform configs
-│   └── nvim/
+│   ├── nvim/
+│   └── zsh/
 ├── linux/           # Linux-only configs
 │   ├── alacritty/
 │   ├── betterlockscreen/
@@ -17,7 +18,6 @@ dotfiles/
 │   ├── hyprland/
 │   ├── i3/
 │   ├── kitty/
-│   ├── nvim/
 │   ├── picom/
 │   ├── polybar/
 │   ├── rofi/
@@ -28,9 +28,6 @@ dotfiles/
 │   ├── wofi/
 │   └── zsh/
 └── macos/           # macOS-only configs
-    ├── nvim/
-    ├── supercat/
-    ├── tmux/
     └── zsh/
 ```
 
@@ -56,16 +53,16 @@ stow -d ~/dotfiles/linux -t ~ zsh
 stow -d ~/dotfiles/linux -t ~ hyprland
 
 # Stow multiple packages at once
-stow -d ~/dotfiles/linux -t ~ zsh tmux nvim hyprland waybar
+stow -d ~/dotfiles/linux -t ~ zsh tmux hyprland waybar
 
 # Stow all linux configs
 stow -d ~/dotfiles/linux -t ~ */
 
-# Global config (Neovim — cross-platform)
-stow -d ~/dotfiles/global -t ~ nvim
+# Global config (Neovim, Zsh — cross-platform)
+stow -d ~/dotfiles/global -t ~ nvim zsh
 
 # macOS
-stow -d ~/dotfiles/macos -t ~ zsh tmux nvim
+stow -d ~/dotfiles/macos -t ~ zsh
 ```
 
 To remove symlinks (unstow):
@@ -90,8 +87,6 @@ Install via your distro's `nerd-fonts` package, or download from [nerdfonts.com]
 ### Neovim
 
 A highly extensible terminal-based text editor built for keyboard-driven development.
-
-> `global/nvim` is the current maintained config. `linux/nvim` and `macos/nvim` are older platform-specific variants.
 
 - [`bob`](https://github.com/MordechaiHadad/bob) — Neovim version manager (or install `nvim` directly)
 - `node` / `npm` — required by Mason for LSP server installation
@@ -118,6 +113,8 @@ A feature-rich Unix shell with extensive customization support via Oh My Zsh.
 - [`fzf`](https://github.com/junegunn/fzf) — fuzzy finder used for file and history search
 - [`nvm`](https://github.com/nvm-sh/nvm) — Node version manager
 - [`tmuxifier`](https://github.com/jimeh/tmuxifier) — required for project session aliases
+
+> Shared aliases/settings live in `global/zsh/.zshrc_common`, sourced from each platform's `.zshrc`. Stow `global/zsh` alongside the platform package (e.g. `stow -d ~/dotfiles/global -t ~ zsh` in addition to `stow -d ~/dotfiles/linux -t ~ zsh`) or the shell will error on missing `~/.zshrc_common`.
 
 > The zsh config contains some work-specific aliases that can safely be removed.
 
