@@ -31,10 +31,10 @@
 	"network": {
 		"interface": "eno1",
 		"format": "{ifname}",
-		"format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-		"format-ethernet": "<span size='13000' foreground='#a6e3a1'>  </span> {bandwidthDownBytes}  | {bandwidthUpBytes} ",
+		"format-wifi": "{essid}<span size='13000' foreground='#f5e0dc'> </span>",
+		"format-ethernet": "<span size='13000' foreground='#a6e3a1'> </span> {bandwidthDownBytes}  | {bandwidthUpBytes} ",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+		"format-disconnected": "Disconnected<span size='13000' foreground='#f5e0dc'> </span>",
 		"tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
 	},
 	"pulseaudio": {
