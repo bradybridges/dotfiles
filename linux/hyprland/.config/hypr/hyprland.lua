@@ -14,6 +14,7 @@ hl.monitor({
 	scale = 1,
 })
 
+-- ultrawide
 hl.monitor({
 	output = "DP-1",
 	mode = "5120x1440@120",
@@ -21,6 +22,22 @@ hl.monitor({
 	scale = "auto",
 	bitdepth = 10,
 })
+
+-- TV 1
+hl.monitor({
+	output = "HDMI-A-1",
+	mode = "3840x2160@60",
+	position = "auto",
+	scale = "1.67",
+})
+
+-- TV 2
+-- hl.monitor({
+-- 	output = "HDMI-A-1",
+-- 	mode = "1920x1080@60",
+-- 	position = "auto",
+-- 	scale = "1.25",
+-- })
 
 ---------------------
 ---- MY PROGRAMS ----
