@@ -77,8 +77,8 @@ hl.env("WLR_NO_HARDWARE_CURSORS", "1")
 ---- LOOK AND FEEL ----
 -----------------------
 
--- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
+	-- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 	general = {
 		gaps_in = 5,
 		gaps_out = 10,
@@ -94,19 +94,13 @@ hl.config({
 		allow_tearing = false,
 		layout = "dwindle",
 	},
-})
-
-hl.config({
 	cursor = {
 		persistent_warps = true,
 		hide_on_key_press = true,
 		warp_on_change_workspace = 1,
 		inactive_timeout = 1,
 	},
-})
-
--- https://wiki.hyprland.org/Configuring/Variables/#decoration
-hl.config({
+	-- https://wiki.hyprland.org/Configuring/Variables/#decoration
 	decoration = {
 		rounding = 4,
 		rounding_power = 2,
@@ -133,10 +127,7 @@ hl.config({
 			input_methods = false,
 		},
 	},
-})
-
--- https://wiki.hypr.land/Configuring/Variables/#groupbar
-hl.config({
+	-- https://wiki.hypr.land/Configuring/Variables/#groupbar
 	group = {
 		groupbar = {
 			col = {
@@ -154,6 +145,45 @@ hl.config({
 			text_color_inactive = "rgb(ffffff)",
 			text_offset = 6,
 		},
+	},
+	-- See https://wiki.hyprland.org/Configuring/Layouts/Dwindle-Layout/
+	dwindle = {
+		preserve_split = true,
+	},
+	-- See https://wiki.hyprland.org/Configuring/Layouts/Master-Layout/
+	master = {
+		new_status = "master",
+	},
+	-- https://wiki.hypr.land/Configuring/Scrolling-Layout/
+	scrolling = {
+		-- column_width = 0.5,
+		column_width = 0.75,
+		focus_fit_method = 0,
+		follow_focus = true,
+		fullscreen_on_one_column = false,
+	},
+	misc = {
+		force_default_wallpaper = 0,
+		disable_hyprland_logo = true,
+	},
+	-- https://wiki.hyprland.org/Configuring/Variables/#input
+	input = {
+		kb_layout = "us",
+		kb_variant = "",
+		kb_model = "",
+		kb_options = "",
+		kb_rules = "",
+
+		follow_mouse = 1,
+		sensitivity = 0,
+
+		touchpad = {
+			natural_scroll = false,
+		},
+	},
+	-- https://wiki.hyprland.org/Configuring/Variables/#gestures
+	gestures = {
+		workspace_swipe_touch = false,
 	},
 })
 
@@ -194,78 +224,10 @@ hl.animation({
 	style = "slidefadevert 50%",
 })
 
---------------------
----- LAYOUTS     ----
---------------------
-
--- See https://wiki.hyprland.org/Configuring/Layouts/Dwindle-Layout/
-hl.config({
-	dwindle = {
-		preserve_split = true,
-	},
-})
-
--- See https://wiki.hyprland.org/Configuring/Layouts/Master-Layout/
-hl.config({
-	master = {
-		new_status = "master",
-	},
-})
-
--- https://wiki.hypr.land/Configuring/Scrolling-Layout/
-hl.config({
-	scrolling = {
-		column_width = 0.5,
-		focus_fit_method = 0,
-		follow_focus = true,
-		fullscreen_on_one_column = false,
-	},
-})
-
 -- Workspace-specific layout overrides
 -- See https://wiki.hyprland.org/Configuring/Workspace-Rules/
 hl.workspace_rule({ workspace = "3", layout = "scrolling" })
 hl.workspace_rule({ workspace = "5", layout = "dwindle" })
-
---------------------
----- MISC        ----
---------------------
-
-hl.config({
-	misc = {
-		force_default_wallpaper = 0,
-		disable_hyprland_logo = true,
-	},
-})
-
----------------
----- INPUT ----
----------------
-
--- https://wiki.hyprland.org/Configuring/Variables/#input
-hl.config({
-	input = {
-		kb_layout = "us",
-		kb_variant = "",
-		kb_model = "",
-		kb_options = "",
-		kb_rules = "",
-
-		follow_mouse = 1,
-		sensitivity = 0,
-
-		touchpad = {
-			natural_scroll = false,
-		},
-	},
-})
-
--- https://wiki.hyprland.org/Configuring/Variables/#gestures
-hl.config({
-	gestures = {
-		workspace_swipe_touch = false,
-	},
-})
 
 -- Per-device config
 -- See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs
