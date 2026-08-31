@@ -49,13 +49,22 @@ return {
 
 		function _G.set_terminal_keymaps()
 			local opts = { noremap = true }
-			vim.api.nvim_buf_set_keymap(
-				0,
-				"t",
-				"<esc>",
-				[[<C-\><C-n>]],
-				vim.tbl_extend("force", opts, { desc = "Exit terminal mode" })
-			)
+			-- Snacks.nvim terminals (e.g. lazygit via <leader>gg) already implement
+			-- their own double-esc-to-exit; skip so we don't set a redundant/competing
+			-- mapping on top of theirs.
+			if vim.bo.filetype ~= "snacks_terminal" then
+				local esc_timer
+				vim.keymap.set("t", "<esc>", function()
+					esc_timer = esc_timer or (vim.uv or vim.loop).new_timer()
+					if esc_timer:is_active() then
+						esc_timer:stop()
+						vim.cmd("stopinsert")
+					else
+						esc_timer:start(200, 0, function() end)
+						return "<esc>"
+					end
+				end, { buffer = 0, expr = true, desc = "Double escape to exit terminal mode" })
+			end
 			-- vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
