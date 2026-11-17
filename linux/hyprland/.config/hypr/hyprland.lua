@@ -62,6 +62,9 @@ hl.env("WLR_NO_HARDWARE_CURSORS", "1")
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
+	render = {
+		cm_auto_hdr = 0,
+	},
 	general = {
 		gaps_in = 5,
 		gaps_out = 10,
